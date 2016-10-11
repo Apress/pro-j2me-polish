@@ -1,0 +1,14 @@
+<!-- Use different <deviceRequirements> that depend on Ant properties.
+     You can use this for targeting only one device during the development phase,
+     for example.
+-->
+
+<deviceRequirements unless="test">
+	<or>
+		<requirement name="JavaPlatform" value="MIDP/2.0+" />
+		<requirement name="JavaPackage" value="nokia-ui" />
+	</or>
+</deviceRequirements>
+<deviceRequirements if="test">
+	<requirement name="Identifier" value="Nokia/Series60" />
+</deviceRequirements>

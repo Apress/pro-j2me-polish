@@ -1,0 +1,13 @@
+/* Listing A-13. Using the circle Background for the Currently Focused Item */
+
+
+focused {
+	padding: 9;
+	font-color: highlightedFontColor;
+	background {
+		type: circle;
+		diameter: 70;
+		color: white;
+	}
+	layout: expand | center;
+}

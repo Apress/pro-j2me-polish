@@ -1,0 +1,28 @@
+// if you need to override the paint() method, you need to
+// override paintScreen() instead when the J2ME Polish GUI is
+// used - but only on MIDP 1.0 devices:
+
+import javax.microedition.lcdui.game.GameCanvas;
+import javax.microedition.lcdui.Graphics;
+
+public class MyGameCanvas
+extends GameCanvas
+implements Runnable
+{
+	public MyGameCanvas(boolean supress) {
+		super(supress);
+	}
+
+	public void run() {
+		// main game loop
+	}
+
+	//#if polish.usePolishGui && polish.classes.fullscreen:defined && !polish.midp2
+		//# public void paintScreen( Graphics g )
+	//#else
+		public void paint( Graphics g )
+	//#endif
+	{
+		// implement the paint method
+	}
+}

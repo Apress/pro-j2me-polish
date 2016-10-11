@@ -1,0 +1,18 @@
+<!-- finetune the resource assembling with the <resources> element
+     of the <build> section in the <j2mepolish> task
+-->
+<resources
+	dir="resources"
+	excludes="readme*, *.definition"
+>
+	<fileset
+		dir="resources/multimedia"
+		includes="*.amr"
+		if="polish.audio.amr"
+	/>
+	<fileset
+		dir="resources/multimedia"
+		includes="*.mid"
+		if="polish.audio.midi and not polish.audio.amr"
+	/>
+</resources>

@@ -1,0 +1,9 @@
+/* you can define paddings either in pixels in percentage of the screen height or width */
+
+.myStyle {
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-vertical: 1%;
+	margin-left: 10;
+	font-color: black;
+}

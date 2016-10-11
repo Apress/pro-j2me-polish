@@ -1,0 +1,7 @@
+/* You can also use nested dynamic styles for selecting texts within a form, for example: */
+
+form p {
+	font-color: black;
+	font-size: medium;
+	background-color: white;
+}

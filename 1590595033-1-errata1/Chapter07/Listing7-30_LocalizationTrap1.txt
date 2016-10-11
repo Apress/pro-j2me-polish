@@ -1,0 +1,8 @@
+// Invalid Locale call, because the key is not given directly
+// never do this:
+String key = "menu.StartGame";
+this.menuScreen.append( Locale.get( key ), null ); // this will crash!!
+
+
+// Instead, use the key directly in the call as in this example: 
+this.menuScreen.append( Locale.get( "menu.StartGame" ), null );  // this works fine

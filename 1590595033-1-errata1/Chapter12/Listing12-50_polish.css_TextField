@@ -1,0 +1,21 @@
+.textInput {
+	margin: 1;
+	padding: 4;
+	padding-left: 2;
+	padding-right: 2;
+	padding-horizontal: 4;
+	textfield-direct-input: true;
+	font-style: bold;
+	font-size: small;
+	font-color: fontColor;
+	background-color: highlightedBgColor;
+	border-color: black;
+	layout: left;
+	textfield-width: 90;
+	datefield-width: 90;
+	textfield-caret-color: red;
+	textfield-caret-char: >;
+	textfield-show-length: true;
+	textfield-direct-input: true;
+	focused-style: .focusedInput;
+}

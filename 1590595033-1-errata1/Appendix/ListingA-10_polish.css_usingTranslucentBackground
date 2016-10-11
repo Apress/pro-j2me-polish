@@ -1,0 +1,14 @@
+/* Listing A-10. Using a Translucent Background for the Currently Focused Item */
+
+
+
+focused {
+	padding: 9;
+	font-color: highlightedFontColor;
+	background-color: argb( 128, 238, 241, 229 );
+	border {
+		width: 2;
+		color: fontColor;
+	}
+	layout: expand | center;
+}

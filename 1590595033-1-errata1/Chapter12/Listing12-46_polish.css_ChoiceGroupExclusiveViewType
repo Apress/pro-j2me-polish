@@ -1,0 +1,10 @@
+/* enable the exclusive view-type only for EXCLUSIVE ChoiceGroups. */
+
+.exclusiveChoiceGroup {
+	padding: 2;
+	padding-horizontal: 5;
+	background: none;
+	font-color: fontColor;
+	view-type: exclusive;
+	exclusiveview-arrow-color: fontColor;
+}

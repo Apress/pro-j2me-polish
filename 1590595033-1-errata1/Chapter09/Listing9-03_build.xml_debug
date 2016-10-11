@@ -1,0 +1,63 @@
+// use the <debug> element to control the logging framework:
+
+<project name="roadrunner" default="j2mepolish">
+	<!-- define the installation folder of J2ME Polish -->
+	<property name="polish.home" location="C:\programs\J2ME-Polish" />
+	<!-- define the installation folder of the WTK -->
+	<property name="wtk.home" location="C:\WTK22" />
+
+	<!-- define the J2ME Polish task, classpath on one line please -->
+	<taskdef name="j2mepolish"
+		classname="de.enough.polish.ant.PolishTask"
+		classpath="${polish.home}/import/enough-j2mepolish-build.jar:${polish.home}/import/jdom.jar"
+	/>
+
+	<!-- enable the test mode -->
+	<target name="test">
+		<property name="test" value="true" />
+		<property name="dir.work" location="build/test" />
+	</target>
+
+	<!-- specify default settings -->
+	<target name="init">
+		<property name="test" value="false" />
+		<property name="dir.work" location="build/real" />
+	</target>
+
+	<!-- start the build with J2ME Polish -->
+	<target name="j2mepolish" depends="init" >
+		<j2mepolish>
+			<info
+				license="GPL"
+				name="Roadrunner"
+				vendorName="A reader."
+				version="0.0.1"
+				jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+			/>
+			<deviceRequirements>
+				<requirement name="Identifier" value="Generic/midp1" />
+			</deviceRequirements>
+			<build
+				usePolishGui="true"
+				workDir="${dir.work}"
+			>
+			<midlet class="com.apress.roadrunner.Roadrunner" />
+			<debug showLogOnError="true"
+				verbose="false"
+				level="error"		
+				if="test"
+			>
+				<filter
+					package="com.apress.roadrunner"
+					level="info"
+				/>
+				<filter
+					class="com.apress.roadrunner.Roadrunner"
+					level="debug"
+				/>
+			</debug>
+		</build>
+		<emulator />
+		</j2mepolish>
+	</target>
+</project>

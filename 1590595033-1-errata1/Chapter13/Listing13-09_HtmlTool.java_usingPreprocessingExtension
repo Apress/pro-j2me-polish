@@ -1,0 +1,24 @@
+public byte[] openHttpConnection( String url )
+throws IOException, SecurityException
+{
+	HttpConnection connection = (HttpConnection)
+	Connector.open( url,Connector.READ_WRITE, true );
+	connection.setRequestMethod( HttpConnection.GET );
+	connection.setRequestProperty("Connection", "close");
+
+	//#useragent connection.setRequestProperty( "UserAgent", "${useragent}" );
+
+	int responseCode = connection.getResponseCode();
+	if ( responseCode == HttpConnection.HTTP_OK ) {
+		InputStream in = connection.openInputStream();
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		byte[] buffer = new byte[ 5 * 1024 ];
+		int read;
+		while ( ( read = in.read( buffer, 0, buffer.length ) ) != -1 ) {
+			out.write( buffer, 0, read );
+		}
+		return out.toByteArray();
+	} else {
+		throw new IOException( "Got invalid response code: " + responseCode );
+	}
+}

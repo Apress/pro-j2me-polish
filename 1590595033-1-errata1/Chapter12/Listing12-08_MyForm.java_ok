@@ -1,0 +1,20 @@
+// this code snippet now works as expected, as the 
+// correct import statements are used:
+
+
+
+import javax.microedition.lcdui.Form;
+import javax.microedition.lcdui.StringItem;
+
+public class MyForm
+extends Form
+{
+	private StringItem textItem;
+
+	public MyForm( String title ) {
+		//#style myForm, default
+		super( title );
+		this.textItem = new StringItem( null, "Hello World" );
+		append( this.textItem );
+	}
+}

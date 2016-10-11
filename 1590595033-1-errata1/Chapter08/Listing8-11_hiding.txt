@@ -1,0 +1,17 @@
+// Sometimes it is necessary to hide statements.
+// An frequently encountered example are multiple return statements:
+
+public Image loadImage( String url )
+throws IOException
+{
+	//#if ${ bytes( polish.HeapSize ) } <= ${ bytes( 500 kb ) }
+		//# return Image.createImage( url );
+	//#else
+		Image image = (Image) this.cachedImages.get( url );
+		if (image == null) {
+			image = Image.createImage( url );
+			this.cachedImages.put( url, image );
+		}
+		return image;
+	//#endif
+}

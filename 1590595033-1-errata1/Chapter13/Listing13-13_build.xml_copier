@@ -1,0 +1,16 @@
+<!-- you can rename resources on the fly by using the "renamer" <copier>
+     in the <resources> element of the <build> section.
+-->
+
+
+<resources
+		dir="resources/default"
+		defaultexcludes="yes"
+		excludes="*.db"
+	>
+	<copier name="renamer">
+		<parameter name="searchPattern" value="\{.*\}" />
+		<parameter name="replacement" value="" />
+	</copier>
+	<localization locales="en" />
+</resources>

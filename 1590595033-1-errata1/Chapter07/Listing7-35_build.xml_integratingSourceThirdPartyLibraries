@@ -1,0 +1,23 @@
+<!-- You can integrate any (source) third party libraries with the <sources> element. -->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Nokia/Series60" />
+	</deviceRequirements>
+	<build>
+		<sources>
+			<source dir="source/src" />
+			<source dir="source/thirdparty" />
+			<source dir="source/s60" if="polish.group.Series60" />
+		</sources>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+	</build>
+	<emulator />
+</j2mepolish>

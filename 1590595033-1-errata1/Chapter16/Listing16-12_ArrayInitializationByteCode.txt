@@ -1,0 +1,45 @@
+// Listing 16-12. Bytecode Instruction for Storing a Simple Integer Array
+
+
+// Java source-code instruction:
+int[] values = new int[]{ 23, 57, 23453, 2342, 232, 213, 345, 56, 6767 };
+
+// Resulting bytecode instructions:
+bipush 9
+newarray int[]
+dup
+iconst_0
+bipush 23
+iastore
+dup
+iconst_1
+bipush 57
+iastore
+dup
+iconst_2
+sipush 23453
+iastore
+dup
+iconst_3
+sipush 2342
+iastore
+dup
+iconst_4
+sipush 232
+iastore
+dup
+iconst_5
+sipush 213
+iastore
+dup
+bipush 6
+sipush 345
+iastore
+dup
+bipush 7
+bipush 56
+iastore
+dup
+bipush 8
+sipush 6767
+iastore

@@ -1,0 +1,9 @@
+/* design fonts easily */
+
+focused {
+	font-color: white;
+	font-face: default; /* same as system or normal */
+	font-size: default; /* same as medium or normal */
+	font-style: bold;
+	background-color: highlightedBackgroundColor;
+}

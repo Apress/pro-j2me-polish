@@ -1,0 +1,8 @@
+/* the shuffle view lets the items move from the left and right and meet in the center */
+
+.mainScreen {
+	padding-left: 5;
+	padding-right: 5;
+	view-type: shuffle;
+	shuffleview-speed: 15;
+}

@@ -1,0 +1,13 @@
+/* Listing A-23. Using a bottom Border for the Currently Focused Item */
+
+
+focused {
+	font-color: highlightedFontColor;
+	background-color: highlightedBackgroundColor;
+	border {
+		type: bottom;
+		width: 2;
+		color: black;
+	}
+	layout: expand | center;
+}

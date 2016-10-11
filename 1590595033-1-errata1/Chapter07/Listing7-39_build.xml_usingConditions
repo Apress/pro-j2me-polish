@@ -1,0 +1,70 @@
+<!-- In J2ME Polish you can target almost anything conditionally.
+     This allows you to include debugging information only for test
+     builds, for example.
+-->
+
+<project name="roadrunner" default="j2mepolish">
+	<!-- define the installation folder of J2ME Polish -->
+	<property name="polish.home" location="C:\programs\J2ME-Polish" />
+	<!-- define the installation folder of the WTK -->
+	<property name="wtk.home" location="C:\WTK22" />
+
+	<!-- define the J2ME Polish task, classpath on one line please -->
+	<taskdef name="j2mepolish"
+		classname="de.enough.polish.ant.PolishTask"
+		classpath="${polish.home}/import/enough-j2mepolish-build.jar:${polish.home}/import/jdom.jar"
+	/>
+
+	<!-- activate the test mode -->
+	<target name="test">
+		<property name="test" value="true" />
+		<property name="work.dir" value="build/test" />
+	</target>
+
+	<!-- normal settings -->
+	<target name="init">
+		<property name="test" value="false" />
+		<property name="work.dir" value="build/real" />
+	</target>
+
+	<!-- start the build with J2ME Polish -->
+	<target name="j2mepolish" depends="init">
+		<j2mepolish>
+			<info
+				license="GPL"
+				name="Roadrunner"
+				vendorName="A reader."
+				version="0.0.1"
+				jarName="${polish.vendor}-${polish.name}-${polish.locale}-app.jar"
+			/>
+			<deviceRequirements if="test">
+				<requirement name="Identifier" value="Nokia/Series60" />
+			</deviceRequirements>
+			<deviceRequirements unless="test">
+				<requirement name="JavaPlatform" value="MIDP/2+.0+" />
+			</deviceRequirements>
+			<build workDir="${work.dir}" >
+				<midlet class="com.apress.roadrunner.Roadrunner" />
+				<resources
+					dir="resources"
+					excludes="*.definition"
+				>
+					<localization locales="de, en, fr_CA" unless="test" />
+					<localization locales="en" if="test" />
+				</resources>
+				<debug level="error" if="test" />
+				<obfuscator name="ProGuard" unless="test" />
+			</build>
+			<emulator if="test" />
+		</j2mepolish>
+	</target>
+
+	<target name="clean">
+		<delete dir="build" />
+		<delete dir="dist" />
+	</target>
+
+        <target name="cleanbuild" depends="clean, j2mepolish" >
+        </target>
+
+</project>

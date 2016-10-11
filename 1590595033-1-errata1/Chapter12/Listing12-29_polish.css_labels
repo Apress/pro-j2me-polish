@@ -1,0 +1,17 @@
+/* usually you use the predefined "label" style for designing all labels.
+   You can change this by specifying the "label-style" CSS attribute:
+*/
+
+focused {
+	label-style: focusedLabelStyle;
+	font-color: highlightedFontColor;
+	background-color: highlightedBackgroundColor;
+	border-width: 2;
+}
+
+.focusedLabelStyle {
+	font-color: highlightedLabelColor;
+	background-color: highlightedBackgroundColor;
+	border-width: 2;
+	layout: left | newline-after;
+}

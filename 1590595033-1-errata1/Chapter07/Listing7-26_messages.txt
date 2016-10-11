@@ -1,0 +1,11 @@
+# this file belongs to resources/messages.txt
+
+menu.StartGame=Start Tickle Fight
+
+# the title of the main-screen with the user-name as the only parameter:
+title.Main=Welcome {0}!
+
+# the intro for a new game - with following parameters:
+# {0}: the name of the player
+# {1}: the name of the remote or computer player
+messages.Introduction={1} threatens to tickle you!\n{0} against {1} is loading...

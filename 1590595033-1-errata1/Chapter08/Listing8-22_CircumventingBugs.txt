@@ -1,0 +1,6 @@
+// Check for polish.Bugs.XXX symbols for circumventing device bugs:
+
+DateField dateField = new DateField("Your Birthday:", DateField.DATE);
+//#ifdef polish.Bugs.dateFieldAcceptsNoNullDate
+	dateField.setDate( new Date() );
+//#endif

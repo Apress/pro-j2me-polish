@@ -1,0 +1,9 @@
+// CSS is not that complicated:
+
+.myStyle {
+	font-color: white;
+	font-style: bold;
+	font-size: large;
+	font-face: proportional;
+	background-color: black;
+}

@@ -1,0 +1,15 @@
+// You can define temporary symbols which ease the handling of complex terms a lot:
+
+//#if config.useFullScreen && (polish.midp2 || polish.classes.fullscreen:defined)
+	//#define tmp.useFullScreen
+	//#define tmp.message = Hello fullscreen World!
+//#else
+	//#define tmp.message = Hello World!
+//#endif
+
+
+// later onwards you can check the temporary symbol instead of the complete term:
+
+//#if tmp.useFullScreen
+	System.out.println( "FullScreen activated!" );
+//#endif

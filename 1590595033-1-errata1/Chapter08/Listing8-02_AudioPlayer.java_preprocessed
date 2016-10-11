@@ -1,0 +1,27 @@
+// this is the preprocessed result of Listing 8-01 when the device supports the Nokia UI API but not the MIDP 2.0 platform
+
+public void playAudio() {
+	//#if polish.api.mmapi || polish.midp2
+		//# try {
+			//# Player player = Manager.createPlayer(
+			//# getClass().getResourceAsStream("/music.mid"), "audio/midi");
+			//# player.realize();
+			//# player.prefetch();
+			//# player.start();
+		//# } catch (Exception e) {
+			//# //#debug error
+			//# System.out.println("Unable to start audio playback" + e);
+		//# }
+	//#elif polish.api.nokia-ui
+		try {
+			byte[] soundData = loadSoundData();
+			Sound sound = new Sound( soundData, Sound.FORMAT_TONE );
+			sound.play( 1 );
+		} catch (IllegalArgumentException e) {
+			//#debug error
+			System.out.println("Unable to play Nokia sound" + e );
+		}
+	//#else
+		//# System.out.println("No sound playback supported.");
+	//#endif
+}

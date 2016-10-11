@@ -1,0 +1,35 @@
+/* Design the menu with the predefined style "menu" and "menuItem" */
+
+menu {
+	margin-left: 2;
+	padding: 2;
+	background {
+		type: round-rect;
+		color: highlightedBackgroundColor;
+		border-width: 2;
+		border-color: backgroundColor;
+	}
+	font-style: bold;
+	font-color: highlightedFontColor;
+	focused-style: .menuFocused;
+	menubar-color: backgroundColor;
+}
+
+menuItem {
+	margin-top: 2;
+	padding: 2;
+	padding-left: 5;
+	font {
+		color: black;
+		size: medium;
+		style: bold;
+	}
+	layout: left;
+}
+
+.menuFocused extends .menuItem {
+	background-color: backgroundColor;
+	font-color: highlightedFontColor;
+	layout: left | horizontal-expand;
+	after: url( dot.png );
+}

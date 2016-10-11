@@ -1,0 +1,24 @@
+// Listing 15-14. A Solution That Uses Only Integers for a Simple Floating-Point Calculation
+
+
+
+public class Mover {
+
+	private int step;
+	private final int steps;
+	private final int distancePerStep;
+
+	public Mover( int distance, int steps ) {
+		this.steps = steps;
+		this.distancePerStep = ( distance * 100 ) / steps;
+	}
+
+
+	public int moveForward() {
+		this.step++;
+		if ( step > this.steps ) {
+			this.step = 0;
+		}
+		return ( this.step * this.distancePerStep ) / 100;
+	}
+}

@@ -1,0 +1,8 @@
+<!-- Instead of using the backbuffer optimization you can also split the tiles into single images -->
+
+<variables>
+	<variable
+		name="polish.TiledLayer.splitImage"
+		value="true"
+	/>
+</variables>

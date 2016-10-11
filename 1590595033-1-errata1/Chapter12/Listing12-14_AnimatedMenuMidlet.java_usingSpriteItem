@@ -1,0 +1,113 @@
+// use the SpriteItem for some cool animation effects like a book
+// that opens up when it is selected by the user.
+
+
+package com.apress.ui;
+
+import java.io.IOException;
+import javax.microedition.lcdui.Command;
+import javax.microedition.lcdui.CommandListener;
+import javax.microedition.lcdui.Display;
+import javax.microedition.lcdui.Displayable;
+import javax.microedition.lcdui.Form;
+import javax.microedition.lcdui.Image;
+import javax.microedition.lcdui.Item;
+import javax.microedition.lcdui.ItemCommandListener;
+import javax.microedition.lcdui.game.Sprite;
+import javax.microedition.midlet.MIDlet;
+import javax.microedition.midlet.MIDletStateChangeException;
+import de.enough.polish.ui.SpriteItem;
+
+public class AnimatedMenuMidlet
+extends MIDlet
+implements ItemCommandListener
+{
+	private Display display;
+	private Form mainForm;
+	private final Command startCmd;
+	private final Command loadCmd;
+	private final Command aboutCmd;
+	private final Command exitCmd;
+
+	public AnimatedMenuMidlet() {
+		super();
+		this.startCmd = new Command( "Start Game", Command.ITEM, 1 );
+		this.loadCmd = new Command( "Load Game", Command.ITEM, 1 );
+		this.aboutCmd = new Command( "About", Command.ITEM, 1 );
+		this.exitCmd = new Command( "Exit", Command.ITEM, 1 );
+
+		try {
+			this.mainForm = new Form( "Main Menu" );
+			int frameWidth = 30;
+			int frameHeight = 30;
+			// create the start game menu item:
+			Image image = Image.createImage( "/player.png");
+			Sprite sprite = new Sprite( image, frameWidth, frameHeight );
+			sprite.setFrameSequence( new int[]{ 2, 5, 5, 6, 3, 7, 1 } );
+			//#style mainScreenItem
+			SpriteItem spriteItem = new SpriteItem( null, sprite, 200, 0, false );
+			spriteItem.setDefaultCommand( this.startCmd );
+			spriteItem.setItemCommandListener( this );
+			this.mainForm.append( spriteItem );
+			// create the load game menu item:
+			image = Image.createImage( "/load.png");
+			sprite = new Sprite( image, frameWidth, frameHeight );
+			// use default frame sequence
+			//#style mainScreenItem
+			spriteItem = new SpriteItem( null, sprite, 200, 0, false );
+			spriteItem.setDefaultCommand( this.loadCmd );
+			spriteItem.setItemCommandListener( this );
+			this.mainForm.append( spriteItem );
+			// create the about menu item:
+			image = Image.createImage( "/about.png");
+			sprite = new Sprite( image, frameWidth, frameHeight );
+			//#style mainScreenItem
+			spriteItem = new SpriteItem( null, sprite, 200, 0, false );
+			spriteItem.setDefaultCommand( this.aboutCmd );
+			spriteItem.setItemCommandListener( this );
+			this.mainForm.append( spriteItem );
+			// create the exit menu item:
+			image = Image.createImage( "/exit.png");
+			sprite = new Sprite( image, frameWidth, frameHeight );
+			//#style mainScreenItem
+			spriteItem = new SpriteItem( null, sprite, 200, 0, false );
+			spriteItem.setDefaultCommand( this.exitCmd );
+			spriteItem.setItemCommandListener( this );
+			this.mainForm.append( spriteItem );
+		} catch ( IOException e ) {
+			//#debug error
+			System.out.println( "Unable to create menu screen" + e );
+			this.mainForm = null;
+		}
+	}
+
+	protected void startApp() throws MIDletStateChangeException {
+		this.display = Display.getDisplay( this );
+		if ( this.mainForm == null ) {
+			throw new MIDletStateChangeException();
+		}
+		this.display.setCurrent( this.mainForm );
+	}
+
+	protected void pauseApp() {
+		// just pause
+	}
+
+	protected void destroyApp( boolean unconditional )
+	throws MIDletStateChangeException
+	{
+		// just quit
+	}
+
+	public void commandAction( Command cmd, Item item ) {
+		if ( cmd == this.startCmd ) {
+			// start game...
+		} else if ( cmd == this.loadCmd ) {
+			/// load game...
+		} else if ( cmd == this.aboutCmd ) {
+			// about this game...
+		} else if ( cmd == this.exitCmd ) {
+			notifyDestroyed();
+		}
+	}
+}

@@ -1,0 +1,64 @@
+// Listing 16-9. Showing a Splash Screen and Doing the Initialization in a Background Thread
+
+
+import de.enough.polish.ui.splash.InitializerSplashScreen;
+import de.enough.polish.ui.splash.ApplicationInitializer;
+import javax.microedition.lcdui.*;
+import javax.microedition.midlet.*;
+
+public class QuickStartupMidlet extends MIDlet
+//#if ! polish.clases.ApplicationInitializer:defined
+	implements ApplicationInitializer
+//#endif
+{
+	private Screen mainScreen;
+	private Display display;
+
+	public QuickStartupMidlet() {
+		// do the initialization in the initApp() method
+	}
+
+	public void startApp()
+	throws MIDletStateChangeException
+	{
+		this.display = Display.getDisplay( this );
+		if ( this.mainScreen != null ) {
+			// the MIDlet has been paused:
+			this.display.setCurrent( this.mainScreen );
+		} else {
+			// the MIDlet is started for this first time:
+			try {
+				Image image = Image.createImage( "/splash.png" );
+				int backgroundColor = 0xFFFFFF;
+				String readyMessage = "Press any key to continue...";
+				// set readyMessage = null to forward to the next
+				// displayable as soon as it's available.
+				int messageColor = 0xFF0000;
+				InitializerSplashScreen splashScreen = new InitializerSplashScreen (
+					this.display, image, backgroundColor, readyMessage,
+				messageColor, this );
+				this.display.setCurrent( splashScreen );
+			} catch ( IOException e ) {
+				throw new MIDletStateChangeException(
+					"Unable to load splash image" );
+			}
+		}
+	}
+
+	public Displayable initApp() {
+		// initialize the application,
+		// e.g., read data from the record store, etc.
+		[...]
+		// now create the main menu screen:
+		// e.g., this.mainScreen = new Form( "Main Menu" );
+		[...]
+		return this.mainScreen;
+	}
+
+	public void pauseApp() {
+	}
+
+	public void destroyApp( boolean unconditional ) {
+	}
+
+}

@@ -1,0 +1,47 @@
+// you can show the log manually by invoking Debug.showLog():
+
+import de.enough.polish.util.Debug;
+import javax.microedition.lcdui.*;
+import javax.microedition.midlet.*;
+
+public class MyMIDlet extends MIDlet
+implements CommandListener
+{
+	//#ifdef polish.debugEnabled
+		private Command logCmd = new Command( "Show log",
+			Command.SCREEN, 10 );
+	//#endif
+	private Screen mainScreen;
+	private Display display;
+
+	public MyMIDlet() {
+		this.mainScreen = new List( "Hello World", List.IMPLICIT );
+		this.mainScreen.setCommandListener( this );
+		//#ifdef polish.debugEnabled
+			this.mainScreen.addCommand( this.logCmd );
+		//#endif
+	}
+
+	public void startApp() {
+		this.display = Display.getDisplay( this );
+		this.display.setCurrent( this.mainScreen );
+	}
+
+	public void destroyApp( boolean unconditional ) {
+	}
+
+	notifyDestroyed();
+	}
+
+	public void pauseApp() {
+	}
+
+	public void commandAction(Command cmd, Displayable screen ) {
+		//#ifdef polish.debugEnabled
+			if (cmd == logCmd) {
+				Debug.showLog( this.display );
+				return;
+			}
+		//#endif
+	}
+}

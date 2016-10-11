@@ -1,0 +1,11 @@
+/* the dropping view lets the items fall from above */
+
+.mainScreen {
+	padding-left: 5;
+	padding-right: 5;
+	view-type: dropping;
+	droppingview-speed: 15;
+	droppingview-damping: 5;
+	droppingview-maxperiode: 2;
+}
+

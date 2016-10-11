@@ -1,0 +1,71 @@
+/* this is a complete example for a polish.css file */
+
+colors {
+	bgColor: rgb( 132,143,96 );
+	highlightedBgColor: rgb( 238,241,229 );
+	highlightedFontColor: rgb( 238,241,229 );
+	fontColor: rgb( 30, 85, 86 );
+}
+
+borders {
+	thinBorder {
+		type: round-rect;
+		arc: 8;
+		color: fontColor;
+	}
+}
+
+backgrounds {
+	imageBackground {
+		color: highlightedBgColor;
+		image: url( bg.png );
+	}
+}
+
+/* The design of the title */
+title {
+	padding: 2;
+	margin-top: 0;
+	margin-bottom: 5;
+	margin-left: 0;
+	margin-right: 0;
+	font-face: proportional;
+	font-size: large;
+	font-style: bold;
+	font-color: highlightedFontColor;
+	background-color: bgColor;
+	border: thinBorder;
+	layout: horizontal-center | horizontal-expand;
+}
+
+/* The design of the currently selected item */
+focused {
+	padding: 5;
+	background {
+		type: round-rect;
+		arc: 8;
+		color: highlightedBgColor;
+		border-color: fontColor;
+		border-width: 2;
+	}
+	font {
+		style: bold;
+		color: fontColor;
+		size: small;
+	}
+	layout: expand | center;
+	after: url( checked.png );
+}
+
+/* The design of the main menu screen */
+.mainScreen {
+	padding: 5;
+	padding-left: 15;
+	padding-right: 15;
+	background: imageBackground;
+	layout: horizontal-expand | horizontal-center | vertical-center;
+	columns: 2;
+	columns-width: equal;
+	menubar-color: fontColor;
+	show-text-in-title: true;
+}

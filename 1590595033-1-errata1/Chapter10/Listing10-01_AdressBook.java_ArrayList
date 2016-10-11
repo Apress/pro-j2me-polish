@@ -1,0 +1,47 @@
+// You can use the de.enough.polish.util.ArrayList just as the usual J2SE ArrayList:
+
+package com.apress.adress;
+import de.enough.polish.util.ArrayList;
+
+public class AdressBook {
+	ArrayList contactsList;
+
+	public AdressBook() {
+		super();	
+	}
+
+	public void addContact( Contact contact ) {
+		this.contactsList.add( contact );
+	}
+
+	public Contact[] searchContacts( String pattern ) {
+	ArrayList matchingContacts = new ArrayList();
+	for ( int i = this.contactsList.size(); --i >= 0; ) {
+		Contact contact = (Contact) this.contactsList.get( i );
+		if ( contact.pattern.indexOf(pattern) != -1 ) {
+			matchingContacts.add( contact );
+		}
+	}
+		return (Contact[]) matchingContacts.toArray(
+			new Contact[ matchingContacts.size() ]);
+	}
+}
+
+package com.apress.adress;
+public class Contact {
+	public String firstName;
+	public String lastName;
+	public String chatAddress;
+	public String emailAddress;
+	public String pattern;
+
+	public Contact(String firstName, String lastName,
+		String chatAddress, String emailAddress)
+	{
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.chatAddress = chatAddress;
+		this.emailAddress = emailAddress;
+		this.pattern = firstName + lastName + chatAddress + emailAddress;
+	}
+}

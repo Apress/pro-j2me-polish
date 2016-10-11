@@ -1,0 +1,41 @@
+package com.apress.preprocess;
+
+import de.enough.polish.Device;
+import de.enough.polish.preprocess.CustomPreprocessor;
+import de.enough.polish.util.StringList;
+
+public class FullScreenPreprocessor extends CustomPreprocessor {
+	private boolean doProcessClass;
+	private String fullScreenClass;
+
+	public FullScreenPreprocessor() {
+		super();
+	}
+
+	public void notifyDevice( Device device, boolean usesPolishGui ) {
+		super.notifyDevice( device, usesPolishGui );	
+		this.fullScreenClass = device.getCapability( "polish.classes.fullscreen" );
+		this.doProcessClass = ( this.fullScreenClass != null );
+	}
+
+	public void notifyPolishPackageStart() {
+		super.notifyPolishPackageStart();
+		this.doProcessClass = false;
+	}
+
+	public void processClass( StringList lines, String className ) {
+		if ( !this.doProcessClass ) {
+			return;
+		}
+		while ( lines.next() ) {
+			String line = lines.getCurrent();
+			int extendsIndex = line.indexOf( "extends Canvas" );
+			if ( extendsIndex != -1 ) {
+				line = line.substring( 0, extendsIndex )
+					+ "extends " + this.fullScreenClass
+					+ line.substring( extendsIndex + "extends Canvas".length() );
+				lines.setCurrent( line );
+			}
+		}
+	}
+}

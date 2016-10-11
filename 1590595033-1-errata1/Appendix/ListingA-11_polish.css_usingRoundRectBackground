@@ -1,0 +1,13 @@
+/* Listing A-11. Using a round-rect Background for the Currently Focused Item */
+
+
+focused {
+	padding: 9;
+	font-color: highlightedFontColor;
+	background {
+		type: round-rect;
+		color: white;
+		arc: 18;
+	}
+	layout: expand | center;
+}

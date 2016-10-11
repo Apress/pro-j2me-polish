@@ -1,0 +1,30 @@
+<!-- Automate the signing of MIDlets with the <sign> element when you have a valid key/certificate.
+     Use the permissions and optionalPermissions attributes of the <info> element for stating the
+     required permissions.
+     In this example the password is given as an Ant property, you can define it on the commandline
+     with the -D switch: "ant -Dpassword=secret"
+ -->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+		permissions="javax.microedition.io.Connector.http"
+		optionalPermissions="javax.microedition.io.Connector.bluetooth.client"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Generic/midp2" />
+	</deviceRequirements>
+	<build>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+		<sign
+			keystore="midlets.ks"
+			key="SignMIDlet"
+			password="${password}"
+		/>
+	/build>
+	emulator />
+</j2mepolish>

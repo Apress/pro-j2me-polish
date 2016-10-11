@@ -1,0 +1,8 @@
+<!-- you can register your own extension in ${polish.home}/custom-extensions.xml: -->
+
+<extension>
+	<type>preprocessor</type>
+	<name>fullscreen</name>
+	<class>com.apress.preprocess.FullScreenPreprocessor</class>
+	<classpath>../apress-preprocessor/bin/classes:${polish.home}/import/apress.jar</classpath>
+</extension>

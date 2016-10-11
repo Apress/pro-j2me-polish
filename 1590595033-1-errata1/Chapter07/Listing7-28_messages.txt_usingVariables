@@ -1,0 +1,5 @@
+# you can use variables and Ant properties in messages.txt as well:
+
+# The player has won some nuggets, {0} specifies the number of won nuggets,
+# e.g. Congrats, you have won 3 Nokia-nuggets!
+messages.YouHaveWon=Congrats! You have won {0} ${polish.Vendor}-${VirtualCurrency}!

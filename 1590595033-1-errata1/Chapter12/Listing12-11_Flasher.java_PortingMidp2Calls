@@ -1,0 +1,5 @@
+// port MIDP 2.0 only calls by using preprocessing:
+
+//#ifdef polish.midp2
+	this.display.flashBacklight( 1000 );
+//#endif

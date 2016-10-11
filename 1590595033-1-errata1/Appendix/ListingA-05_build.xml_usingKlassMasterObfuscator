@@ -1,0 +1,6 @@
+<!-- Listing A-5. Using the KlassMaster Obfuscator -->
+
+
+<obfuscator unless="test" enable="true" name="KlassMaster" >
+	<parameter name="ObfuscateFlowLevel" value="none" />
+</obfuscator>

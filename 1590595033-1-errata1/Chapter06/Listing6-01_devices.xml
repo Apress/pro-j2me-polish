@@ -1,0 +1,27 @@
+<devices>
+	<device supportsPolishGui="true">
+		<identifier>Generic/jtwi</identifier>
+		<features>isVirtual</features>
+		<capability name="JavaPlatform" value="MIDP/2.0" />
+		<capability name="JavaConfiguration" value="CLDC/1.0" />
+		<capability name="JavaPackage" value="mmapi,wmapi,jtwi" />
+		<capability name="SoundFormat" value="midi, amr" />
+	</device>
+	<device>
+		<identifier>Nokia/6600</identifier>
+		<groups>Series60</groups>
+		<features>hasCamera</features>
+		<capability name="JavaPlatform" value="MIDP/2.0" />
+		<capability name="JavaPackage" value="mmapi, wmapi, btapi, jtwi" />
+		<capability name="OS" value="Symbian OS 7.0s"/>
+		<capability name="ScreenSize" value="176x208"/>
+		<capability name="BitsPerPixel" value="16"/>
+		<capability name="VideoFormat" value="3gpp, mpeg-4, realvideo" />
+		<capability name="SoundFormat"
+			value="midi, midi24, true tones, amr, wb-amr" />
+		<capability name="HeapSize" value="3mb" />
+		<capability name="MaxJarSize" value="dynamic" />
+		<capability name="CameraResolution" value="vga" />
+		<capability name="CameraZoom" value="2" />
+	</device>
+</devices>

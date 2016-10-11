@@ -1,0 +1,45 @@
+// Listing 16-4. Using and Avoiding Interfaces at the Same Time with Preprocessing
+
+
+public interface SelectionListener {
+	public void selectionChanged( StringListItem item );
+}
+
+public class StringListItem 
+extends CustomItem 
+{
+	//#if SelectionListenerImplementation:defined
+		//#= ${classname( SelectionListenerImplementation )} selectionListener;
+	//#else
+		SelectionListener selectionListener;
+	//#endif
+
+	//#if SelectionListenerImplementation:defined
+		//#= public void setSelectionListener(
+		//#= ${classname( SelectionListenerImplementation )} selectionListener
+		//#= ) {
+	//#else
+		public void setSelectionListener(
+			SelectionListener selectionListener
+		) {
+	//#endif
+		this.selectionListener = selectionListener;
+	}
+	[...]
+}
+
+
+public class Controller
+//#if SelectionListenerImplementation:defined
+	//# implements CommandListener
+//#else
+	implements CommandListener, SelectionListener
+//#endif
+{
+
+	public void selectionChanged( StringListItem item ) {
+		//#debug info
+		System.out.println( "selection changed: " + item );
+	}
+	[...]
+}

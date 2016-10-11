@@ -1,0 +1,17 @@
+// this is the preprocessed code when you don't use dynamic localizations.
+
+import de.enough.polish.util.Locale;
+
+[...]
+
+// getting a simple translation:
+this.menuScreen.append( "Start Tickle Fight", null );
+
+// getting a translation with one parameter:
+this.menuScreen.setTitle( "Welcome " + userName + "!" );
+
+// getting a translation with several parameters:
+String[] parameters = new String[2];
+parameters[0] = userName;
+parameters[1] = enemyName;
+this.textField.setString( Locale.get( 1, parameters ) );

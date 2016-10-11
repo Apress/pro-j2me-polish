@@ -1,0 +1,9 @@
+// you can use this snippet for checking in
+// your java source code whether the current
+// target device supports pointer events (has a stylus):
+
+//#ifdef polish.hasPointerEvents
+	callPointerMethod();
+//#else
+	callPlainMethod();
+//#endif

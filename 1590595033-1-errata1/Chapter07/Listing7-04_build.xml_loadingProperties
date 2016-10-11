@@ -1,0 +1,16 @@
+<!-- Loading Ant properties is a handy way to make your script flexible
+     when several members of your team are using it.
+     In the following example the file ${user-name}-build.properties
+     is loaded. When your user name is "robot" then robot-build.properties
+     are loaded.
+-->
+
+<project name="example" default="showpaths">
+	<property file="${user.name}-build.properties" />
+	<property name="wtk.home" location="C:\WTK22" />
+	<property name="polish.home" location="C:\programs\J2ME-Polish" />
+	<target name="showpaths">
+		<echo message="wtk.home=${wtk.home}" />
+		<echo message="polish.home=${polish.home}" />
+	</target>
+</project>

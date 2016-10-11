@@ -1,0 +1,27 @@
+<!-- Use the <localization> element for selecting the localizations of your application.
+     Also note the ${polish.locale} property in the "jarName" attribute of the <info> element.
+ -->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-${polish.locale}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Nokia/Series60" />
+	</deviceRequirements>
+	<build>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+		<resources>
+			<localization
+				locales="de_DE, en_US,"
+				unless="test" 
+			/>
+			<localization locales="en_US" if="test" />
+		</resources>
+	</build>
+	<emulator />
+</j2mepolish>

@@ -1,0 +1,18 @@
+<!-- use properties to make your build.xml script more flexible.
+     Remember: Ant properties are "write once", so the property
+     does not change when you try to assign it another value.
+
+     Call this script with "ant robert greetuser" for example.
+-->
+
+<project name="example" default="greetuser">
+	<target name="robert">
+		<property name="user" value="Robert" />
+	</target>
+	<target name="jinny">
+		<property name="user" value="Jinny" />
+	</target>
+	<target name="greetuser">
+		<echo message="hello ${user}" />
+	</target>
+</project>

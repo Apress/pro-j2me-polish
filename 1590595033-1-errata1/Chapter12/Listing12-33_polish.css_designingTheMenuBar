@@ -1,0 +1,24 @@
+/* set the color of the menu bar with the "menubar-color" attribute */
+
+menu {
+	margin-left: 2;
+	padding: 2;
+	background {
+	type: round-rect;
+	color: highlightedBackgroundColor;
+	border-width: 2;
+	border-color: bgColor;
+}
+
+font-style: bold;
+	focused-style: .menuFocused;
+	font-color: highlightedFontColor;
+	menubar-color: black;
+}
+
+.mainScreen {
+	background-image: url( bg.png );
+	/* use a transparent menubar for screens with this style,
+	so that the bg.png image is shown in the menubar as well: */
+	menubar-color: transparent;
+}

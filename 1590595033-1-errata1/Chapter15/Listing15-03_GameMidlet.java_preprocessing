@@ -1,0 +1,56 @@
+// Listing 15-3. Implementing a Full Screen with Preprocessing
+
+package com.apress.preprocessing;
+import javax.microedition.lcdui.*;
+import javax.microedition.midlet.*;
+
+public class GameMidlet extends MIDlet {
+	private Display display;
+
+	public GameMidlet() {
+
+	}
+
+	public void startApp() {
+		this.display = Display.getDisplay( this );
+		Splash splash = new Splash();
+		this.display.setCurrent( splash );
+	}
+
+	public void destroyApp( boolean unconditional ) {
+	}
+
+	public void pauseApp() {
+	}
+}
+
+
+// the splash screen:
+package com.apress.preprocessing;
+import javax.microedition.lcdui.*;
+
+public class Splash
+//#if polish.midp2
+	extends Canvas
+//#elif polish.classes.fullscreen:defined
+	//#= extends ${polish.classes.fullscreen}
+//#else
+	// hide extends clause from the IDE:
+	//# extends Canvas
+//#endif
+{
+	public void paint( Graphics g ) {
+		//#if polish.midp2
+			setFullScreenMode( true );
+		//#endif
+		//#if polish.FullCanvasSize:defined
+			//#= g.drawString("Starting!",
+			//#= 	${polish.FullCanvasWidth}/2,
+			//#= 	${polish.FullCanvasHeight}/2,
+			//#= 	Graphics.HCENTER | Graphics.BASELINE );
+		//#else
+			g.drawString("Starting!", getWidth()/2, getHeight()/2,
+				Graphics.HCENTER | Graphics.BASELINE );
+		//#endif
+	}
+}

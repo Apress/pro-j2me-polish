@@ -1,0 +1,17 @@
+// the following code won't work (as expected) as 
+// no import statement is used:
+
+
+public class MyForm
+extends javax.microedition.lcdui.Form
+{
+	private javax.microedition.lcdui.StringItem textItem;
+
+	public MyForm( String title ) {
+		//#style myForm, default
+		super( title );
+		this.textItem =
+			new javax.microedition.lcdui.StringItem( null, "Hello World" );
+		append( this.textItem );
+	}
+}

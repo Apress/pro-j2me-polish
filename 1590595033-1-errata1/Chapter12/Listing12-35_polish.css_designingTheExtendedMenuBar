@@ -1,0 +1,43 @@
+/* Design the extended menu bar by specifying the styles "menubar", "command" or "leftcommand" and "rightcommand". */
+
+menubar {
+	margin-top: -10;
+	margin-bottom: 0;
+	margin-left: 2;
+	margin-right: 2;
+	padding: 1;
+	background: none;
+	menubar-options-image: url( options.png );
+	menubar-select-image: url( checked.png );
+	/*
+	menubar-show-image-and-text: true;
+	menubar-cancel-image: url( cancel.png );
+	*/
+}
+
+leftcommand {
+	padding: 2;
+	padding-left: 4;
+	padding-right: 4;
+	padding-horizontal: 4;
+	padding-bottom: 0;
+	font-color: fontColor;
+	font-style: bold;
+	background: none;
+}
+
+rightcommand {
+	padding: 2;
+	padding-left: 4;
+	padding-right: 4;
+	padding-horizontal: 4;
+	padding-bottom: 0;
+	font-color: fontColor;
+	font-style: bold;
+	background {
+		type: round-rect;
+		color: highlightedBgColor;
+		border-color: fontColor;
+		border-width: 1;
+	}
+}

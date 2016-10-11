@@ -1,0 +1,28 @@
+<!-- use preprocessing variables for enabling the J2ME Polish only for selected devices -->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Generic/midp1" />
+	</deviceRequirements>
+	<build
+		usePolishGui="false"
+	>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+		<variables>
+			<!-- activate the GUI for Series 60 devices -->
+			<variable
+				name="polish.usePolishGui"
+				value="true"
+				if="polish.group.Series60" 
+			/>
+		</variables>
+	</build>
+	<emulator />
+</j2mepolish>

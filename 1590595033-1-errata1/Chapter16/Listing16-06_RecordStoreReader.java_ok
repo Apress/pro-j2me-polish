@@ -1,0 +1,51 @@
+// Listing 16-6. Filtering and Sorting a Record Store Simultaneously
+
+
+
+import javax.microedition.rms.*;
+
+import de.enough.polish.util.ArrayList;
+
+public class RecordStoreReader {
+
+	private final ArrayList list;
+
+	public RecordStoreReader( Object condition )
+	throws RecordStoreException
+	{
+
+		// open record store:
+		RecordStore store = RecordStore.openRecordStore( "store", false );
+		// enumerate the record sets the fastest possible way:
+		RecordEnumeration enumeration =
+			store.enumerateRecords( null, null, false );
+		ArrayList recordList = new ArrayList( enumeration.numRecords() );
+
+		while ( enumeration.hasNextElement() ) {
+			MyRecordData data = new MyRecordData( enumeration.nextRecord() );
+
+			if ( !data.conditionFulfilled( condition ) ) {
+				continue;
+			}
+			boolean notInserted = true;
+			for ( int i = recordList.size(); --i >= 0; ) {
+				MyRecordData compare = (MyRecordData) recordList.get( i );
+
+				if ( data.compare( compare ) != RecordComparator.PRECEDES ) {
+					recordList.add( i + 1, data );
+					notInserted = false;
+					break;
+				}
+			}
+			if ( notInserted ) {
+				recordList.add( 0, data );
+			}	
+		}
+		store.closeRecordStore();
+		this.list = recordList;
+	}
+
+	public ArrayList getRecords() {
+		return this.list;
+	}
+}

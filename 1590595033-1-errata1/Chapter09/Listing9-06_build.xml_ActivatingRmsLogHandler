@@ -1,0 +1,13 @@
+<!-- You can activate the "rms" or the "file" loghandler in the <debug> element of the <build> section of the <j2mepolish> task.  -->
+
+<debug level="warn" unless="test">
+	<handler name="rms" if="polish.vendor == Siemens" />
+        <handler
+		name="file"
+		if ="polish.api.pdaapi"
+	>
+		<parameter name="preferredRoot" value="E:" />
+		<parameter name="useUnqiueName" value="true" />
+	</handler>
+	<filter package="com.apress.application" level="debug" />
+</debug>

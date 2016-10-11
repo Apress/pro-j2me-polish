@@ -1,0 +1,14 @@
+<!-- Listing A-8. Renaming Resources on the Fly -->
+
+
+<resources
+	dir="resources/default"
+	defaultexcludes="yes"
+	excludes="*.db"
+>
+	<copier name="renamer">
+		<parameter name="searchPattern" value="\{.*\}" />
+		<parameter name="replacement" value="" />
+	</copier>
+	<localization locales="en" />
+</resources>

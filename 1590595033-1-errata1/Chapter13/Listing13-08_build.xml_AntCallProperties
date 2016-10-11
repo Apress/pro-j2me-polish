@@ -1,0 +1,7 @@
+<!-- define your own additional Ant properties by specifying 
+     nested <parameter> elements in your "antcall" extension:
+-->
+
+<finalizer name="antcall" target="deploy">
+	<parameter name="dir.ftp" value="${ nospace( polish.Vendor ) }" />
+</finalizer>

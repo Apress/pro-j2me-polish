@@ -1,0 +1,6 @@
+<!-- a complete build.xml file, isn't it cute? -->
+<project name="example" default="hello">
+	<target name="hello">
+		<echo message="hello world!" />
+	</target>
+</project>

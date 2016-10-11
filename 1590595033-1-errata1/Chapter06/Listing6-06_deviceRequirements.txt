@@ -1,0 +1,5 @@
+<!-- to be used within the build.xml file of your project. -->
+<deviceRequirements>
+	<requirement name="JavaPlatform" value="MIDP/2.0+" />
+	<requirement name="Feature" value="hasPointerEvents" />
+</deviceRequirements>

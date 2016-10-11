@@ -1,0 +1,10 @@
+<!-- In case you use more than 128 different tiles, 
+     you need to set the grid type in your build.xml:
+-->
+
+<variables>
+	<variable
+		name="polish.TiledLayer.GridType"
+		value="short"
+	/>
+</variables>

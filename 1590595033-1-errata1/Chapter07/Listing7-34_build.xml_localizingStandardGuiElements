@@ -1,0 +1,26 @@
+<!-- You can localize standard GUI elements in the build.xml script as well.
+     This is usually only desirable when you do not use the localization framework
+     or when you only target one locale anyhow.
+-->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Nokia/Series60" />
+	</deviceRequirements>
+	<build>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+		<variables>
+			<variable name="polish.command.cancel" value="Abbruch" />
+			<variable name="polish.command.delete" value="L&ouml;schen" />
+			<variable name="polish.title.input" value="Eingabe" />
+		</variables>
+	</build>
+	<emulator />
+</j2mepolish>

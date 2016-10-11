@@ -1,0 +1,8 @@
+<!-- use your extension conditionally by specifying the "if" or "unless" attributes: -->
+
+<preprocessor
+	name="fullscreen"
+	if="polish.classes.fullscreen:defined"
+>
+	<parameter name="logfile" value="log.txt" />
+</preprocessor>

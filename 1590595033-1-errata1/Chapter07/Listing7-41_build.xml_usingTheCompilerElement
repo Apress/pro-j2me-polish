@@ -1,0 +1,15 @@
+<!-- Use the <compiler> element for fine grained control of the included debugging information and so forth.  -->
+
+<build
+	compilerMode="true"
+	compilerModePreverify="true"
+	compilerDestDir="preverified"
+>
+	<midlet class="com.apress.roadrunner.Roadrunner" />
+	<compiler
+		compiler="jikes"
+		debug="true"
+		debuglevel="lines,vars,source"
+		optimize="true"
+	/>
+</build>

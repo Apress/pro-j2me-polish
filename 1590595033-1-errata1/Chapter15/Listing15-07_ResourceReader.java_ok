@@ -1,0 +1,30 @@
+// Listing 15-7. Reading a Resource Correctly Using Some Defensive Techniques
+
+public class ResourceReader {
+
+	public byte[] readResource( String url )
+	throws IOException
+	{
+		InputStream in = getClass().getResourceAsStream( url );
+		byte[] buffer;
+
+		// the following always returns 0 on Symbian and Motorola:
+		int available = in.available();
+		if ( available == 0 ) {
+			available = 4 * 1024; // 4 kb
+		}
+
+		buffer = new byte[ available ];
+		ByteArrayOutputStream out = new ByteArrayOutputStream( available );
+		int read;
+
+		try {
+			while ( (read = in.read( buffer ) ) != -1 ) {
+				out.write( buffer, 0, read );
+			}
+		} finally {
+			in.close();
+		}
+		return out.toByteArray();
+	}
+}

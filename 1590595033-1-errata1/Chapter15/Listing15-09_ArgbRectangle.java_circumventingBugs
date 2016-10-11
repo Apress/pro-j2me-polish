@@ -1,0 +1,36 @@
+// Listing 15-9. Circumventing the drawRgbOrigin Issue
+
+public void paintArgbColor( int argbColor, int x, int y,
+	int width, int height, Graphics g )
+{
+	// circumvent the drawRgbOrigin issue when it is present:
+	//#ifdef polish.Bugs.drawRgbOrigin
+		x += g.getTranslateX();
+		y += g.getTranslateY();
+	//#endif
+
+	// in reality you need to buffer this:
+	int[] rgbBuffer = new int[ width ];
+	for ( int i = rgbBuffer.length - 1; i >= 0 ; i-- ) {
+		rgbBuffer[ i ] = argbColor;
+	}
+
+	// defensive programming: some implementations
+	// don't accept negative coordinates:
+	if ( x < 0 ) {
+		width += x;
+		if ( width < 0 ) {
+			return;
+		}
+		x = 0;
+	}
+	if ( y < 0 ) {
+		height += y;
+		if ( height < 0 ) {
+			return;
+		}
+		y = 0;
+	}
+	// now paint the RGB data:
+	g.drawRGB( rgbBuffer, 0, 0, x, y, width, height, true );
+}

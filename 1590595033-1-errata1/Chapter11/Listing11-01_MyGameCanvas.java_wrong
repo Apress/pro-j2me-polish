@@ -1,0 +1,14 @@
+// This example does not work, since no proper import statement is used:
+
+public class MyGameCanvas
+extends javax.microedition.lcdui.game.GameCanvas
+implements Runnable
+{
+	public MyGameCanvas(boolean supress) {
+		super(supress);
+	}
+
+	public void run() {
+		// main game-loop
+	}
+}

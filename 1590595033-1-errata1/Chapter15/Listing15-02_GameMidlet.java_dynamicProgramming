@@ -1,0 +1,79 @@
+//Listing 15-2. Implementing a Full Screen Dynamically
+
+package com.apress.dynamic;
+import javax.microedition.lcdui.*;
+import javax.microedition.midlet.*;
+public class GameMidlet extends MIDlet {
+private Display display;
+
+public GameMidlet() {
+}
+
+public void startApp() {
+	this.display = Display.getDisplay( this );
+	Canvas splash;
+
+		// check if this device supports the MIDP 2.0 standard:
+	try {
+		Class.forName("javax.microedition.io.PushRegistry");
+		// okay, MIDP 2.0 standard is supported:
+		splash = (Canvas) Class.forName
+			("com.apress.dynamic.Midp2Splash").newInstance();
+	} catch (Exception e) {
+		// the MIDP 2.0 standard is not supported
+		// check if this device supports the Nokia-UI-API:
+		try {
+			Class.forName("com.nokia.mid.ui.FullCanvas");
+			splash = (Canvas) Class.forName
+				("com.apress.dynamic.NokiaUiSplash").newInstance();
+		} catch (Exception e2) {
+			// okay, neither MIDP 2.0 nor Nokia UI API is supported:
+			splash = new Midp1Splash();
+		}
+	}
+
+	// show the splash screen:
+	this.display.setCurrent( splash );
+	}
+
+	public void destroyApp( boolean unconditional ) {
+	}
+
+	public void pauseApp() {
+	}
+}
+
+
+// the normal MIDP 1.0 splash screen:
+package com.apress.dynamic;
+import javax.microedition.lcdui.*;
+public class Midp1Splash extends Canvas {
+	public void paint( Graphics g ) {
+		g.drawString("Starting!", getWidth()/2, getHeight()/2,
+			Graphics.HCENTER | Graphics.BASELINE );
+	}
+}
+
+
+// the MIDP 2.0 splash screen:
+package com.apress.dynamic;
+import javax.microedition.lcdui.*;
+public class Midp2Splash extends Canvas {
+	public void paint( Graphics g ) {
+		setFullScreenMode( true );
+		g.drawString("Starting!", getWidth()/2, getHeight()/2,
+			Graphics.HCENTER | Graphics.BASELINE );
+	}
+}
+
+
+// the Nokia UI API splash screen:
+package com.apress.dynamic;
+import javax.microedition.lcdui.*;
+import com.nokia.mid.ui.FullCanvas;
+public class NokiaSplash extends FullCanvas {
+	public void paint( Graphics g ) {
+		g.drawString("Starting!", getWidth()/2, getHeight()/2,
+			Graphics.HCENTER | Graphics.BASELINE );
+	}
+}

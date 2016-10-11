@@ -1,0 +1,57 @@
+<!-- you can also call any Ant target within your build.xml file
+     when you use the "antcall" extension, e.g. 
+     <preprocessor name="antcall" target="mypreprocesstarget" />
+     In the following example we extend the obfuscation phase:
+-->
+
+<project name="roadrunner" default="j2mepolish">
+	<property name="polish.home" location="C:\programs\J2ME-Polish" />
+	<property name="wtk.home" location="C:\WTK22" />
+
+	<taskdef 
+		name="j2mepolish"
+		classname="de.enough.polish.ant.PolishTask"
+		classpath="${polish.home}/import/enough-j2mepolish-build.jar:${polish.home}/import/jdom.jar"
+	/>
+
+	<target name="j2mepolish">
+		<j2mepolish>
+			<info
+				license="GPL"
+				name="Roadrunner"
+				vendorName="A reader."
+				version="0.0.1"
+				jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+			/>
+			<deviceRequirements>
+				<requirement name="Identifier" value="Generic/midp1" />
+			</deviceRequirements>
+			<build
+				usePolishGui="true"
+			>
+				<midlet class="com.apress.roadrunner.Roadrunner" />
+				<obfuscator name="antcall" target="yguard" />
+			</build>
+			<emulator />
+		</j2mepolish>
+	</target>
+
+	<target name="yguard" >
+		<taskdef name="yguard"
+		classname="com.yworks.yguard.ObfuscatorTask"
+		classpath="import/yguard.jar"
+	/>
+		<echo message="obfuscating for ${polish.identifier}." />
+		<yguard>
+			<property name="error-checking" value="pedantic"/>
+			<inoutpair in="${polish.obfuscate.source}" out="${polish.obfuscate.target}"/>
+			<externalclasses
+				path="${polish.obfuscate.bootclasspath}:${polish.obfuscate.classpath}"
+			/>
+			<expose>
+				<class name="com.apress.roadrunner.Roadrunner" />
+			</expose>
+		</yguard>
+	</target>
+</project>
+

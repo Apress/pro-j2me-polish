@@ -1,0 +1,12 @@
+/* you can put any image into the very top of the screen by specifying the
+   "foreground" attribute of that screen's style
+*/
+
+
+.mainScreen {
+	padding-left: 5;
+	padding-right: 5;
+	foreground-image: url( turtle.png );
+	foreground-x: 112;
+	foreground-y: 162;
+}

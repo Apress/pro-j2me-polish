@@ -1,0 +1,16 @@
+/* you can use comments in polish.css files, too! */
+
+
+/**
+ * this style designs the main screen:
+ **/
+.mainScreen {
+	/* defining the color of a font: */
+	font-color: black;
+	/* sizes are small, medium, and large: */
+	font-size: medium;
+	/* styles are plain, bold, italic, or underlined: */
+	font-style: italic;
+	/* the face can either be system, proportional, or monospace: */
+	font-face: system;
+}

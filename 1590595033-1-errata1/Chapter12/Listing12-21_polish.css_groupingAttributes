@@ -1,0 +1,23 @@
+/* you can group attributes as in the .helpScreen style, 
+   so that some style components are easier to read 
+*/
+
+
+.mainScreen {
+	padding: 5;
+	font-color: black;
+	font-size: medium;
+	font-style: italic;
+	font-face: system;
+}
+
+.helpScreen {
+	margin: 5;
+	background-color: yellow;
+	font {
+		color: black;
+		size: medium;
+		style: italic;
+		face: system;
+	}
+}

@@ -1,0 +1,28 @@
+/* Designing the ChoiceGroup */
+.multipleChoiceGroup {
+	focused-style: choiceGroupFocused;
+}
+
+/* Designing the items contained in the ChoiceGroup */
+.multipleChoiceItem {
+	margin: 1; /* compensation for the border of the focused style */
+	padding: 3;
+	padding-horizontal: 5;
+	font-color: fontColor;
+	font-style: plain;
+	choice-color: fontColor;
+}
+
+/* Designing the currently focused item of the ChoiceGroup */
+.choiceGroupFocused {
+	padding: 3;
+	padding-horizontal: 5;
+	font-color: fontColor;
+	font-style: bold;
+	border {
+		type: round-rect;
+		color: fontColor;
+		arc: 8;
+	}
+	layout: left | expand;
+}

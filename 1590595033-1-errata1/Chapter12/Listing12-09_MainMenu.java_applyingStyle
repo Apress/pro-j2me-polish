@@ -1,0 +1,12 @@
+// use the //#style directive for applying a style to a form or a GUI item.
+
+import javax.microedition.lcdui.Form;
+
+public class MainMenu extends Form {
+
+	public MainMenu( String title ) {
+		//#style mainMenu, default
+		super( title );
+		[...]
+	}
+}

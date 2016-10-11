@@ -1,0 +1,20 @@
+<groups>
+	<group>
+		<name>Nokia-UI</name>
+		<features>supportSpriteTransformation, hasCommandKeyEvents</features>
+		<capability name="classes.fullscreen" value="com.nokia.mid.ui.FullCanvas" />
+		<capability name="JavaPackage" value="nokia-ui" />
+		<capability name="key.LeftSoftKey" value="-6" />
+		<capability name="key.RightSoftKey" value="-7" />
+	</group>
+	<group>
+		<name>Series40</name>
+		<parent>Nokia-UI</parent>
+		<capability name="JavaPlatform" value="MIDP/1.0" />
+		<capability name="ScreenSize" value="128x128" />
+		<capability name="FullCanvasSize" value="128x128" />
+		<capability name="JavaConfiguration" value="CLDC/1.0" />
+		<capability name="Emulator.Class" value="NokiaEmulator" />
+		<capability name="Emulator.Skin" value="Nokia_S40_DP20_SDK_1_0" />
+	</group>
+</groups>

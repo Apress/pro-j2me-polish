@@ -1,0 +1,10 @@
+// you can nest preprocessing directives up to any level:
+
+//#ifdef polish.group.Series40
+	doSomething( 40 );
+	//#if polish.Identifier != Nokia/6230
+		doAnotherThing();
+	//#endif
+//#elifdef polish.group.Series60
+	doSomething( 60 );
+//#endif

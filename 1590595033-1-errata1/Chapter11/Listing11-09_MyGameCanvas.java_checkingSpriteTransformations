@@ -1,0 +1,32 @@
+// not all MIDP 1.0 platforms support the transformation of Sprites.
+// Use the "polish.supportSpriteTransformation" preprocessing symbol for checking it:
+
+import javax.microedition.lcdui.game.GameCanvas;
+import javax.microedition.lcdui.game.Sprite;
+
+public class MyGameCanvas
+extends GameCanvas
+implements Runnable
+{
+	//#if !( polish.midp2 || polish.supportSpriteTransformation )
+		private static final int MIRROR_SEQUENCE = new int[]{ 2, 3 };
+	//#endif
+	Sprite player;
+
+	public MyGameCanvas(boolean supress) {
+		super(supress);
+	}
+
+	public void run() {
+		// main game loop
+	}
+
+	public void mirrorPlayer() {
+		//#if polish.midp2 || polish.supportSpriteTransformation
+			this.player.setTransform( Sprite.TRANS_MIRROR );
+		//#else
+			// use an additional mirrored frame in the sprite:
+			this.player.setFrameSequence( MIRROR_SEQUENCE );
+		//#endif
+	}
+}

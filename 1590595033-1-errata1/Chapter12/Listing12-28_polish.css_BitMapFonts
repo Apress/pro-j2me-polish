@@ -1,0 +1,6 @@
+/* you also apply bitmap fonts, the *.bmp extension is not needed. */
+
+focused {
+	font-bitmap: china;
+	background-color: highlightedBackgroundColor;
+}

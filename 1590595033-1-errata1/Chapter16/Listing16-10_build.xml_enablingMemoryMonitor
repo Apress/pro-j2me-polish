@@ -1,0 +1,24 @@
+<!-- Listing 16-10. Enabling the Memory Monitor in the WTK Emulator in the <emulator> Element -->
+
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement 
+			name="Identifier"
+			value="Generic/midp2" 
+		/>
+	</deviceRequirements>
+	<build
+		usePolishGui="true"
+	>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+	</build>
+	<emulator enableMemoryMonitor="true" />
+</j2mepolish>

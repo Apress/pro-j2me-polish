@@ -1,0 +1,7 @@
+.tickerStyle {
+	font-color: fontColor;
+	font-size: small;
+	border-color: backgroundColor;
+	background-color: yellow;
+	ticker-step: 4;
+}

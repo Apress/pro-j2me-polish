@@ -1,0 +1,37 @@
+<!-- Listing 15-4. Using Different Source Files with the <source> Elements -->
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement 
+			name="Identifier"
+			value="Nokia/Series60, Siemens/x75" 
+		/>
+	</deviceRequirements>
+	<build
+		usePolishGui="true"
+	>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+		<sources>
+			<source dir="source/src" />
+			<source 
+				dir="source/midp2"
+				if="polish.midp2" 
+			/>
+			<source 
+				dir="source/nokiaui"
+				if="polish.api.nokia-ui and not polish.midp2" 
+			/>
+			<source 
+				dir="source/midp1"
+				if="not (polish.api.nokia-ui or polish.midp2)" 
+			/>
+		</sources>
+	</build>
+	<emulator />
+</j2mepolish>

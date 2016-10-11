@@ -1,0 +1,9 @@
+// you can easily change the inheritance of a class using a bit of preprocessing:
+
+public class SplashScreen
+	//#if polish.api.nokia-ui
+		//# extends com.nokia.mid.ui.FullCanvas
+	//#else
+		extends Canvas
+	//#endif
+	[...]

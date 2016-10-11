@@ -1,0 +1,41 @@
+// Listing 16-14. Loading Array Data from a Resource File
+
+
+
+// Java source-code instructions:
+InputStream is = getClass().getResourceAsStream( "/l1.data" );
+DataInputStream in = new DataInputStream( is );
+short arrayLength = in.readShort();
+int[] values = new int[ arrayLength ];
+for ( int i = 0; i < values.length; i++ ) {
+values[ i ] = in.readInt();
+}
+
+
+
+// resulting Java byte-code instructions:
+aload_0
+invokevirtual #97 <Method Class Object.getClass()>
+ldc1 #99 <String "/l1.data">
+invokevirtual #105 <Method java.io.InputStream Class.getResourceAsStream(String)>
+astore 7
+new #107 <Class DataInputStream>
+dup
+aload 7
+invokespecial #110 <Method void DataInputStream(java.io.InputStream)>
+astore 8
+aload 8
+invokevirtual #114 <Method short DataInputStream.readShort()>
+istore 9
+iload 9
+newarray int[]
+astore 10
+iconst_0
+istore 11
+goto 310
+aload 10
+iload 11
+aload 8
+invokevirtual #118 <Method int DataInputStream.readInt()>
+iastore
+iinc 11 1

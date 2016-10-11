@@ -1,0 +1,16 @@
+<!-- You can use complex conditions for selecting your targtet devices by nesting any requirements.
+     Alternatively use the "Term" requirement which accepts any preprocessing term as its value.
+-->
+
+<deviceRequirements>
+	<or>
+		<and>
+			<requirement name="JavaPlatform" value="MIDP/2.0+" />
+			<requirement name="SoundFormat" value="midi" />
+		</and>
+		<and>
+			<requirement name="JavaPackage" value="nokia-ui" />
+			<requirement name="BitPerPixel" value="16+" />
+		</and>
+	</or>
+</deviceRequirements>

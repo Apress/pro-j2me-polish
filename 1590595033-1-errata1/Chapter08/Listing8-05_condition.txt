@@ -1,0 +1,9 @@
+// this snippet demonstrates how you can exclude complete files depending on a preprocessing term:
+
+//#condition polish.api.mmapi || polish.api.nokia-ui
+
+package com.company.j2me.audio;
+
+public class AudioPlayer {
+	// ...
+}

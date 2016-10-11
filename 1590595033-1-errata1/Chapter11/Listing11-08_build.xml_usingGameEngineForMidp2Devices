@@ -1,0 +1,9 @@
+<!-- You can force the usage of the J2ME Polish Game Engine for MIDP 2.0 devices as well: -->
+
+<variables>
+	<variable
+		name="polish.usePolishGameApi"
+		value="true"
+		if="polish.identifier == VendorName/DeviceName"
+	/>
+</variables>

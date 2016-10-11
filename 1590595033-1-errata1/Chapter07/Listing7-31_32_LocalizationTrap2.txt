@@ -1,0 +1,10 @@
+// Another Invalid Locale Call, Because Parameters Are Given Directly
+// never do this:
+this.menuScreen.append( Locale.get( "game.StartMessage" ),
+new String[]{ userName, enemyname } ); // the new String[]{..} will break the preprocessing....
+
+Instead, define the parameters before the actual call:
+// Corrected Locale Call
+// this is fine:
+String[] parameters = new String[]{ userName, enemyname };
+this.menuScreen.append( Locale.get( "game.StartMessage" ), parameters ); // this works fine

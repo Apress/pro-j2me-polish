@@ -1,0 +1,9 @@
+// use this snippet to use hardcoded values
+// within your program while remaining flexible
+// at the same time:
+
+//#ifdef polish.FullCanvasHeight:defined
+	//#= int height = ${ polish.FullCanvasHeight };
+//#else
+	int height = getHeight();
+//#endif

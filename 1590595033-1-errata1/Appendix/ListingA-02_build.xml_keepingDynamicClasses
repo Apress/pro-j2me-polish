@@ -1,0 +1,7 @@
+<!-- Listing A-2. Keeping Dynamic Classes in Your Project -->
+
+
+<obfuscator unless="test" enable="true" name="ProGuard" >
+	<keep class="com.company.dynamic.SomeDynamicClass" />
+	<keep class="com.company.dynamic.AnotherDynamicClass" />
+</obfuscator>

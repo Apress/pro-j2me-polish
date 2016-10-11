@@ -1,0 +1,16 @@
+/* Listing A-14. Using the pulsating Background for the Currently Focused Item */
+
+
+
+focused {
+	padding: 9;
+	font-color: highlightedFontColor;
+	background {
+		type: pulsating;
+		start-color: highlightedBackgroundColor;
+		end-color: white;
+		back-and-forth: no;
+		repeat: no;
+	}
+	layout: expand | center;
+}

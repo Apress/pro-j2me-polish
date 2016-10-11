@@ -1,0 +1,45 @@
+/* 
+   This file designs the application of Listing 7-6.
+   Store this file at resources/polish.css.
+*/
+
+
+colors {
+	bgColor: #eef1e5;
+	highlightedBgColor: #848f60;
+	fontColor: rgb( 30, 85, 86 );
+	highlightedFontColor: white;
+}
+
+title {
+	padding-top: 15;
+	font-color: fontColor;
+	font-style: bold;
+	font-size: large;
+	font-face: proportional;
+	layout: expand | center;
+}
+
+.mainMenu {
+	padding: 10;
+	background-color: bgColor;
+	layout: horizontal-center | vertical-center;
+}
+
+.mainMenuItem {
+	font-color: fontColor;
+	font-style: bold;
+	font-size: medium;
+	layout: expand | center;
+}
+
+focused {
+	background-color: highlightedBgColor;
+	font-style: bold;
+	font-size: medium;
+	border-color: highlightedBgColor;
+	border-width: 2;
+	font-color: highlightedFontColor;
+	layout: expand | center;
+}
+

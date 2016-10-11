@@ -1,0 +1,13 @@
+/* Listing A-12. Using an image Background for the Currently Focused Item */
+
+
+focused {
+	padding: 9;
+	font-color: highlightedFontColor;
+	background {
+		image: url( gradient.png );
+		color: transparent;
+		anchor: top | center;
+	}
+	layout: expand | center;
+}

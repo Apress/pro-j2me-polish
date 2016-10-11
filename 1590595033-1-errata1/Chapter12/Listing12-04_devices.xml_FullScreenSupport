@@ -1,0 +1,20 @@
+<!--
+Some MIDP 2.0 devices do not support the menu mode, since they do not forward key
+events when a soft key is pressed. J2ME Polish determines whether a device supports the menu
+mode by evaluating the device database. When the hasCommandKeyEvents feature is set, the
+device supports the pure MIDP 2.0 menu mode. Additionally, you can set the capabilities
+key.LeftSoftKey and key.RightSoftKey to define the key codes for the soft keys (these are the
+values that are reported to the keyPressed() method of a Canvas). When no keys are defined,
+the value -6 is assumed for the left soft key and the value -7 for the right soft key. Listing 12-4
+shows the definition of the Siemens/CX65 phone that includes these settings.
+-->
+
+<device
+	supportsPolishGui="true"
+>
+	<identifier>Siemens/CX65</identifier>
+	<features>hasCommandKeyEvents</features>
+	<capability name="ScreenSize" value="132x176"/>
+	<capability name="key.LeftSoftKey" value="-1" />
+	<capability name="key.RightSoftKey" value="-4" />
+</device>

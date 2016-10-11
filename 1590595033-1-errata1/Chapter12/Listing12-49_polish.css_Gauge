@@ -1,0 +1,15 @@
+.gaugeItem {
+	margin: 0;
+	margin-right: 10;
+	padding-left: 16;
+	border: thinBorder;
+	font-size: small;
+	font-color: fontColor;
+	layout: left | expand;
+	gauge-width: 60;
+	gauge-mode: chunked;
+	gauge-color: rgb( 86, 165, 255 );
+	gauge-gap-color: rgb( 38, 95, 158 );
+	gauge-value-align: right;
+	gauge-show-value: true;
+}

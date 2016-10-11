@@ -1,0 +1,15 @@
+colors {
+	bgColor: rgb( 132, 143, 96 );
+	highlightedBgColor: rgb( 238, 241, 229 );
+	highlightedFontColor: rgb( 238, 241, 229 );
+	fontColor: rgb( 30, 85, 86 );
+}
+
+.winnerStringListStyle {
+	font-size: medium;
+	font-style: bold;
+	stringlistitem-foreground-color: fontColor;
+	stringlistitem-highlighted-foreground-color: highlightedFontColor;
+	stringlistitem-background-color: highlightedBgColor;
+	stringlistitem-highlighted-background-color: bgColor;
+}

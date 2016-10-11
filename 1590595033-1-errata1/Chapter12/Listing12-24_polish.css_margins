@@ -1,0 +1,7 @@
+/* define margins with margin-left, margin-right, margin-top, margin-bottom and margin */
+
+.myStyle {
+	margin: 5;
+	margin-left: 10;
+	font-color: black;
+}

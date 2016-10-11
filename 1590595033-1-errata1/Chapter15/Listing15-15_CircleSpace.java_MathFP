@@ -1,0 +1,10 @@
+// Listing 15-15. Calculating the Space Occupied by a Circle with MathFP
+
+
+public int calculateCircleSpace( String radiusStr ) {
+	int radius = MathFP.toFP( radiusStr );
+	int exponent = MathFP.toFP( 2 );
+	int result = MathFP.mul( MathFP.PI,
+		MathFP.pow( radius, exponent ) );
+	return MathFP.toInt( result );
+}

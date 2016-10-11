@@ -1,0 +1,9 @@
+// you can use this snippet to change the class inheritence
+// in your Java source code:
+
+public class SplashScreen
+//#ifdef polish.classes.fullscreen:defined
+	//#= extends ${ polish.classes.fullscreen }
+//#else
+	extends Canvas
+//#endif

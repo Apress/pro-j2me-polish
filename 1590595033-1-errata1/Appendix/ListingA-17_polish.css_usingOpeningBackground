@@ -1,0 +1,15 @@
+/* Listing A-17. Using the opening Background for the Currently Focused Item */
+
+
+
+focused {
+	padding: 9;
+	font-color: highlightedFontColor;
+	background {
+		type: opening;
+		color: white;
+		start-height: 6;
+		steps: 2;
+	}
+	layout: expand | center;
+}

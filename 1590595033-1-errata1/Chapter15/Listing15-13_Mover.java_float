@@ -1,0 +1,22 @@
+// Listing 15-13. A Simple Floating-Point Calculation
+
+
+public class Mover {
+
+	private int step;
+	private final int steps;
+	private final float distancePerStep;
+
+	public Mover( int distance, int steps ) {
+		this.steps = steps;
+		this.distancePerStep = (float) distance / (float) steps;
+	}
+
+	public int moveForward() {
+		this.step++;
+		if ( step > this.steps ) {
+			this.step = 0;
+		}
+		return (int) ( this.step * this.distancePerStep );
+	}
+}

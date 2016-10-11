@@ -1,0 +1,34 @@
+/* with the "show-text-in-title" you can show the text of list items 
+   in the title when they are focused by the user:
+*/
+
+title {
+	padding: 2;
+	margin-top: 32;
+	margin-bottom: 2;
+	margin-left: 16;
+	margin-right: 0;
+	font-face: proportional;
+	font-size: large;
+	font-style: bold;
+	font-color: highlightedFontColor;
+	background: none;
+	border: none;
+	layout: left | horizontal-expand;
+}
+
+.mainScreen {
+	padding: 5;
+	padding-left: 15;
+	padding-right: 15;
+	background-image: url( bg.png );
+	show-text-in-title: true;
+	layout: horizontal-expand | horizontal-center | vertical-center;
+	columns: 2;
+}
+
+.mainCommand {
+	padding: 5;
+	icon-image: url( %INDEX%.png );
+	icon-image-align: center;
+}

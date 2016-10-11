@@ -1,0 +1,8 @@
+// use the //#foreach directive to iterate over several subvalues of a variable.
+// Those values need to be separated by commas.
+
+String format;
+//#foreach format in polish.SoundFormat
+	format = "${ lowercase( format ) }";
+	System.out.println( "The audio-format " + format + " is supported." );
+//#next format

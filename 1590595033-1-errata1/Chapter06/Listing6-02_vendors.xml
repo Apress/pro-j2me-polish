@@ -1,0 +1,13 @@
+<vendors>
+	<vendor>
+		<name>Nokia</name>
+		<features></features>
+		<capability name="key.ClearKey" value="-8" />
+		<capability name="key.ChangeInputModeKey" value="35" />
+	</vendor>
+	<vendor>
+		<name>Siemens</name>
+		<features></features>
+		<capability name="Emulator.Class" value="SiemensEmulator" />
+	</vendor>
+<vendors>

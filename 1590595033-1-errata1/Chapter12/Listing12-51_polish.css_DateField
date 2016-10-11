@@ -1,0 +1,15 @@
+.dateInput {
+	margin: 1;
+	padding: 4;
+	padding-left: 2;
+	padding-right: 2;
+	padding-horizontal: 4;
+	font-style: bold;
+	font-size: small;
+	font-color: fontColor;
+	background-color: highlightedBgColor;
+	border-color: black;
+	layout: left;
+	focused-style: .focusedInput;
+	datefield-width: 90;
+}

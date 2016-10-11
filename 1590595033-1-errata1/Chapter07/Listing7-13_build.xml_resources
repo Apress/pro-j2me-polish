@@ -1,0 +1,12 @@
+<!-- you can fine tune the resource assembling with the 
+     <resources> element inside of the <build> section
+     of the J2ME Polish task.
+-->
+
+<build>
+	<resources
+		dir="resources/modern"
+		excludes="readme*, *.definition"
+	/>
+	<midlet class="com.apress.roadrunner.Roadrunner" />
+</build>

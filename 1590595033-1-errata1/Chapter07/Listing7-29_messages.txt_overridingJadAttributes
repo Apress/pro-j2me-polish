@@ -1,0 +1,5 @@
+# You can override any JAD and Manifest attributes given in the <info> section of the build.xml script
+# in a messages.txt file.
+
+MIDlet-Description=A game where you need to tickle your enemies!
+MIDlet-Name=Tickle-Fight

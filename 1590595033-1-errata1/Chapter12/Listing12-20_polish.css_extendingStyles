@@ -1,0 +1,25 @@
+/* Extending styles can save you a lot of work
+   and allows you to change many settings at once
+   in one single place.
+   Beware of image backgrounds and the like, however.
+   These are instantiated several times when they
+   are defined in a parent style.
+   Better define a background that is used several times
+   in the "backgrounds" section and reference it in
+   the parent style.
+*/
+
+.mainScreen {
+	margin: 10;
+	font-color: black;
+	font-size: medium;
+	font-style: italic;
+	background-color: gray;
+}
+
+.highscoreScreen extends mainScreen {
+	font-color: white;
+	background-color: black;
+}
+
+

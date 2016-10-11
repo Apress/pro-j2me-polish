@@ -1,0 +1,10 @@
+/* Listing A-20. Using a simple Border for the Currently Focused Item */
+
+
+focused {
+	font-color: highlightedFontColor;
+	background: none;
+	border-width: 2;
+	border-color: black;
+	layout: expand | center;
+}

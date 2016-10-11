@@ -1,0 +1,10 @@
+// Listing 15-16. Calculating the Space Occupied by a Circle with MicroFloat
+
+
+
+public int calculateCircleSpace( String radiusStr ) {
+	int radius = MicroFloat.parseFloat( radiusStr );
+	int result = MicroFloat.mul( MicroFloat.PI,
+		MicroFloat.mul( radius, radius ) );
+	return MicroFloat.intValue( result );
+}

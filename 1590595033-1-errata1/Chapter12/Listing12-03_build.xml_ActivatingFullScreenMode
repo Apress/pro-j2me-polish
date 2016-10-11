@@ -1,0 +1,31 @@
+<!-- activate the fullscreen mode by setting the "fullscreen" attribute or providing 
+     the "polish.FullScreen" variable:
+-->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Generic/midp1" />
+	</deviceRequirements>
+	<build
+		usePolishGui="true"
+		fullscreen="menu"
+	>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+		<variables>
+			<!-- Use the normal fullscreen for Siemens devices -->
+			<variable
+				name="polish.FullScreen"
+				value="true"
+				if="polish.vendor == Siemens" 
+			/>
+		</variables>
+	</build>
+	<emulator />
+</j2mepolish>

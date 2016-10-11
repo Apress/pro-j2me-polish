@@ -1,0 +1,34 @@
+// Listing 16-13. Saving Space by Storing Array Data in Strings
+
+
+// Java source code instructions:
+String value = "23,57,23453,2342,232,213,345,56,6767";
+String[] valueChunks = TextUtil.split( value, ',' );
+int[] values = new int[ valueChunks.length ];
+for ( int i = 0; i < values.length; i++ ) {
+values[ i ] = Integer.parseInt( valueChunks[ i ] );
+}
+
+
+// resulting Java bytecode instructions:
+ldc1 #75 <String "23,57,23453,2342,232,213,345,56,6767">
+astore 4
+aload 4
+bipush 44
+invokestatic #81 <Method String[] TextUtil.split( String, char )>
+astore 5
+aload 5
+arraylength
+newarray int[]
+astore 6
+iconst_0
+istore 7
+goto 208
+aload 6
+iload 7
+aload 5
+iload 7
+aaload
+invokestatic #87 <Method int Integer.parseInt( String )>
+iastore
+iinc 7 1

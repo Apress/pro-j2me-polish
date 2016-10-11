@@ -1,0 +1,34 @@
+// Listing 15-10. Using the Correct Keycodes for the Soft Keys
+
+package com.apress.preprocessing;
+
+import javax.microedition.lcdui.*;
+
+public class MyCanvas extends Canvas {
+
+	//#ifdef polish.key.LeftSoftKey:defined
+		//#= private static final int LEFT_SOFT_KEY = ${polish.key.LeftSoftKey};
+	//#else
+		private static final int LEFT_SOFT_KEY = -6;
+	//#endif
+	//#ifdef polish.key.RightSoftKey:defined
+		//#= private static final int RIGHT_SOFT_KEY = ${polish.key.RightSoftKey};
+	//#else
+		private static final int RIGHT_SOFT_KEY = -7;
+	//#endif
+
+	public void keyPressed( int keyCode ) {
+		if ( keyCode == LEFT_SOFT_KEY ) {
+			// process left soft key
+		} else if ( keyCode == RIGHT_SOFT_KEY ) {
+			// process right soft key
+		} else {
+			int gameAction = getGameAction( keyCode );
+			// process key pressed event...
+		}
+	}
+
+	protected void paint( javax.microedition.lcdui.Graphics graphics ) {
+	}
+
+}

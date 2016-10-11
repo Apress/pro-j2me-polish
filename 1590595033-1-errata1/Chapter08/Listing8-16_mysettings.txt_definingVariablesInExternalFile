@@ -1,0 +1,6 @@
+# defining variables in external file:
+
+# The base URL of the application:
+config.BaseUrl=http://www.server.com
+# The message that is displayed on the splash screen:
+config.WelcomeMessage=Welcome!

@@ -1,0 +1,9 @@
+// The basic design definition reides in resources/polish.css:
+
+.myStyle {
+	font-color: white;
+	font-style: bold;
+	font-size: large;
+	font-face: proportional;
+	background-color: black;
+}

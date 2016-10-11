@@ -1,0 +1,14 @@
+/* Listing A-21. Using a round-rect Border for the Currently Focused Item */
+
+
+focused {
+	font-color: highlightedFontColor;
+	background: none;
+	border {
+		type: round-rect;
+		width: 2;
+		color: black;
+		arc: 18;
+	}
+	layout: expand | center;
+}

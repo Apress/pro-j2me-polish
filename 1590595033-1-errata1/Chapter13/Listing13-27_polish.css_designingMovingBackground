@@ -1,0 +1,15 @@
+focused {
+	padding: 5;
+	background {
+		type: com.apress.ui.MovingBackgroundConverter;
+		color: white;
+		speed: 10;
+	}
+
+	font {
+		style: bold;
+		color: fontColor;
+		size: small;
+	}
+	layout: expand | center;
+}

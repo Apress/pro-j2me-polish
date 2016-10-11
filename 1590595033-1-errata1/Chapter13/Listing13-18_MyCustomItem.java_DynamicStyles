@@ -1,0 +1,32 @@
+public class MyCustomItem extends CustomItem {
+
+	public MyCustomItem( String label ) {
+		super( label );
+	}
+
+	//#ifdef polish.useDynamicStyles
+	protected String createCssSelector() {
+		return "mycustomitem";
+	}
+	//#endif
+
+	protected int getMinContentWidth() {
+		return 50;
+	}
+
+	protected int getMinContentHeight() {
+		return 10;
+	}
+
+	protected int getPrefContentWidth( int allowedWidth ) {
+		return 100;
+	}
+
+	protected int getPrefContentHeight( int allowedHeight ) {
+		return 20;
+	}
+
+	protected void paint( Graphics g, int width, int height ) {
+		// paint the item...
+	}
+}

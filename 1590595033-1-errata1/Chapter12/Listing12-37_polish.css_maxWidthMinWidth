@@ -1,0 +1,13 @@
+/* you can also specify a tabular design by setting 
+   the max-width and min-width of the label and other content items.
+*/
+
+.inputField {
+	min-width: 110;
+	max-width: 110;
+}
+
+label {
+	min-width: 52;
+	max-width: 52;
+}

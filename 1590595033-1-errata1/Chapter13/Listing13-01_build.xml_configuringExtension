@@ -1,0 +1,9 @@
+<!-- Activate a preprocessor by specifying the <preprocessor> element
+     inside the <build> section.
+     Configure the extension by providing nested <parameter> elements.
+-->
+
+<preprocessor class="com.apress.preprocess.FullScreenPreprocessor">
+	<parameter name="logfile" value="fullscreen.log" />
+	<parameter name="enableLogging" value="true" />
+</preprocessor>

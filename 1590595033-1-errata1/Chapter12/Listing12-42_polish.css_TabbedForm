@@ -1,0 +1,30 @@
+/* design a tabbed form with the predefined  styles
+   tabbar, activetab and inactivetab:
+*/
+
+tabbar {
+	background-color: white;
+	layout: expand;
+	padding-bottom: 0;
+	tabbar-scrolling-indicator-color: black;
+}
+
+activetab {
+	background-type: round-tab;
+	background-color: silver;
+	background-arc: 8;
+	font-color: white;
+	padding-left: 10;
+	padding-right: 8;
+}
+
+inactivetab {
+	padding-left: 6;
+	padding-right: 4;
+	margin-left: 2;
+	margin-right: 2;
+	background-type: round-tab;
+	background-color: gray;
+	background-arc: 8;
+	font-color: silver;
+}

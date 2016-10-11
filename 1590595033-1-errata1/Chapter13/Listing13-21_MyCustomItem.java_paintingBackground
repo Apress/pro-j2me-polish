@@ -1,0 +1,10 @@
+// you need to paint a background only when for the current target device
+// the J2ME Polish GUI is not used:
+
+protected void paint( Graphics g, int width, int height ) {
+	//#ifndef polish.usePolishGui
+		// draw default background:
+		g.setColor( this.backgroundColor );
+		g.fillRect( 0, 0, this.width, this.height );
+	//#endif
+}

@@ -1,0 +1,66 @@
+// Listing 15-5. Implementing a Full-Screen Splash Screen by Using Different Source Folders
+
+package com.apress.folders;
+
+import javax.microedition.lcdui.*;
+import javax.microedition.midlet.*;
+
+public class GameMidlet extends MIDlet {
+	private Display display;
+
+	public GameMidlet() {
+	}
+
+	public void startApp() {
+		this.display = Display.getDisplay( this );
+		Splash splash = new Splash();
+		this.display.setCurrent( splash );
+	}
+
+	public void destroyApp( boolean unconditional ) {
+	}
+
+	public void pauseApp() {
+	}
+}
+
+
+// the normal MIDP 1.0 splash screen,
+// this class resides in source/midp1:
+package com.apress.folders;
+import javax.microedition.lcdui.*;
+
+public class Splash extends Canvas {
+	public void paint( Graphics g ) {
+		g.drawString("Starting!", getWidth()/2, getHeight()/2,
+			Graphics.HCENTER | Graphics.BASELINE );
+	}
+}
+
+
+// the MIDP 2.0 splash screen,
+// this class resides in source/midp2:
+package com.apress.folders;
+import javax.microedition.lcdui.*;
+
+public class Splash extends Canvas {
+public void paint( Graphics g ) {
+		setFullScreenMode( true );
+		g.drawString("Starting!", getWidth()/2, getHeight()/2,
+			Graphics.HCENTER | Graphics.BASELINE );
+	}
+}
+
+
+// the Nokia UI API splash screen,
+// this class resides in source/nokiaui:
+package com.apress.folders;
+import javax.microedition.lcdui.*;
+import com.nokia.mid.ui.FullCanvas;
+
+public class Splash extends FullCanvas {
+	public void paint( Graphics g ) {
+		g.drawString("Starting!", getWidth()/2, getHeight()/2,
+			Graphics.HCENTER | Graphics.BASELINE );
+	}
+}

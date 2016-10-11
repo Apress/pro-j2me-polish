@@ -1,0 +1,7 @@
+// use the //#message and //#todo directives for understanding and monitoring the preprocessing phase:
+
+//#if polish.api.mmapi
+	//#message The device ${polish.Identifier} supports the MMAPI.
+//#else
+	//#todo Implement audio playback for device ${polish.Identifier}.
+//#endif

@@ -1,0 +1,29 @@
+<!-- you can integrate any emulator by setting the "Emulator.Executable" capability for a device
+     in the devices.xml or custom-devices.xml.
+-->
+
+<device>
+	<identifier>Motorola/V550</identifier>
+	<features>doubleBuffering, hasCamera</features>
+	<capability name="OS" value="Motorola" />
+	<capability name="JavaPlatform" value="MIDP/2.0" />
+	<capability name="JavaConfiguration" value="CLDC/1.0" />
+	<capability name="JavaPackage" value="mmapi, wmapi, phonebook" />
+	<capability name="ScreenSize" value="176x220" />
+	<capability name="ClosedFlipScreenSize" value="96x80" />
+	<capability name="BitsPerPixel" value="16" />
+	<capability name="HeapSize" value="800 kb" />
+	<capability name="MaxJarSize" value="100 kb" />
+	<capability name="MaxRecordStoreSize" value="64 kb" />
+	<capability name="JavaProtocol" value="udp, http, https, socket, tcp" />
+	<capability name="SoundFormat" value="midi, wav, amr, mp3" />
+
+	<capability 
+		name="Emulator.Executable"
+		value="${motorola.home}/EmulatorA.1/bin/emujava.exe" 
+	/>
+	<capability 
+		name="Emulator.Arguments"
+		value="${polish.jadPath};;-deviceFile;;${motorola.home}/EmulatorA.1/bin/Resources/V550_V545.props"
+	/>
+</device>

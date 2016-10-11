@@ -1,0 +1,5 @@
+<extension>
+	<type>loghandler</type>
+	<name>http</name>
+	<clientClass>com.apress.log.HttpLogHandler</clientClass>
+</extension>

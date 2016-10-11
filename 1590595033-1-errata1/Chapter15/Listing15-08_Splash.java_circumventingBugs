@@ -1,0 +1,27 @@
+// Listing 15-8. Using the FullCanvas When the needsNokiaUiForSystemAlerts Bug Is Present
+
+
+package com.apress.preprocessing;
+
+import javax.microedition.lcdui.*;
+
+public class Splash
+
+//#if polish.midp2 && !polish.Bugs.needsNokiaUiForSystemAlerts
+	extends Canvas
+//#elif polish.classes.fullscreen:defined
+	//#= extends ${polish.classes.fullscreen}
+//#else
+	// hide extends clause from the IDE:
+	//# extends Canvas
+//#endif
+{
+
+	public void paint( Graphics g ) {
+		//#if polish.midp2 && !polish.Bugs.needsNokiaUiForSystemAlerts
+			setFullScreenMode( true );
+		//#endif
+		g.drawString( "Starting!", getWidth() / 2, getHeight() / 2,
+			Graphics.HCENTER | Graphics.BASELINE );
+	}
+}

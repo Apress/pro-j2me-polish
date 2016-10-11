@@ -1,0 +1,49 @@
+
+public class MyCustomItem extends CustomItem {
+
+	public MyCustomItem( String label ) {
+		//#style myCustomItemStyle, default
+		super( label );
+	}
+
+	//#ifdef polish.usePolishGui
+	public MyCustomItem( String label, Style style ) {
+		//#if true
+			//# super( label, style );
+		//#else
+			super( label );
+		//#endif
+	}
+	//#endif
+
+	public static MyCustomItem getDefaultInstance( String label ) {
+		// use either the myCustomItemStyle or the default style:
+		return new MyCustomItem( label );
+	}
+
+	public static MyCustomItem getHighscoreInstance( String label ) {
+		// use the highscore style:
+		//#style highscore
+		return new MyCustomItem( label );
+	}
+	
+	protected int getMinContentWidth() {
+		return 50;
+	}
+
+	protected int getMinContentHeight() {
+		return 10;
+	}
+
+	protected int getPrefContentWidth( int allowedWidth ) {
+		return 100;
+	}
+
+	protected int getPrefContentHeight( int allowedHeight ) {
+		return 20;
+	}
+
+	protected void paint( Graphics g, int width, int height ) {
+		// paint the item...
+	}
+}

@@ -1,0 +1,38 @@
+<!-- sort and filter JAD and Manifest attributes with the <jadFilter> and <manifestFilter> elements -->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Generic/midp1" />
+	</deviceRequirements>
+	<build>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+		<jad>
+			<attribute
+				name="Nokia-MIDlet-Category"
+				value="Game"
+				if="polish.group.Series40"
+			/>
+			<jadFilter>
+				MIDlet-Name, MIDlet-Version,
+				MIDlet-Vendor, MIDlet-Jar-URL, MIDlet-Jar-Size,
+				MIDlet-Description?, MIDlet-Icon?, MIDlet-Info-URL?,
+				MIDlet-Data-Size?, MIDlet-*, *
+			</jadFilter>
+		</jad>
+		<manifestFilter>
+			Manifest-Version, MIDlet-Name, MIDlet-Version, MIDlet-Vendor,
+			MIDlet-1, MIDlet-2?, MIDlet-3?, MIDlet-4?, MIDlet-5?,
+			MicroEdition-Profile, MicroEdition-Configuration,
+			MIDlet-Description?, MIDlet-Icon?, MIDlet-Info-URL?,
+			MIDlet-Data-Size?
+		</manifestFilter>
+	</build>
+	<emulator />
+</j2mepolish>

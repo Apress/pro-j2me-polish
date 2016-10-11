@@ -1,0 +1,7 @@
+// Use preprocessing for configuring your application:
+
+//#ifdef config.BaseUrl:defined
+	//#= private static final String BASE_URL = "${config.BaseUrl}";
+//#else
+	private static final String BASE_URL = "http://www.default.com";
+//#endif

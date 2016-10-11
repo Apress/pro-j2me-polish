@@ -1,0 +1,7 @@
+<!-- after you have registered your extension in custom-extensions.xml
+     you don't need to specify the classname and the classpath anymore.
+-->
+
+<preprocessor name="fullscreen" >
+	<parameter name="logfile" value="log.txt" />
+</preprocessor>

@@ -1,0 +1,7 @@
+<!-- Listing A-1. Including Source Folder Conditionally in the <build> Element of the <j2mepolish> Task -->
+
+<sources>
+	<source dir="source/src" />
+	<source dir="source/test" if="test" />
+	<source dir="source/bluetooth" if="polish.api.btapi" />
+</sources>

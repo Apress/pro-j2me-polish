@@ -1,0 +1,32 @@
+<!-- you can enable the fullscreen mode with the "polish.GameCanvas.useFullScreen" 
+     variable as well as the "fullscreen" attribute of the <build> element.
+     In this example we activate the "menu" fullscreen mode for normal screens while
+     using the plain vanilla fullscreen (without a menu) for classes extending GameCanvas: 
+-->
+
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="MazeRace"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-${polish.locale}-mazerace.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Nokia/Series60" />
+	</deviceRequirements>
+	<build
+		usePolishGui="true"
+		fullscreen="menu"
+	>
+		<midlet class="com.apress.mazerace.MazeRace" />
+		<variables>
+			<variable
+				name="polish.GameCanvas.useFullScreen"
+				value="true"
+			/>
+		</variables>
+	</build>
+	<emulator />
+</j2mepolish>

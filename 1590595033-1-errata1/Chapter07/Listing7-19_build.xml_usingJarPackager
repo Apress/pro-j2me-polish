@@ -1,0 +1,25 @@
+<!-- You can use the original Jar packager instead of the J2ME Polish internal packager
+     by specifying the <packager> element.
+
+-->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Generic/midp1" />
+	</deviceRequirements>
+	<build>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+		<packager
+			executable="jar"
+			arguments="cvfM;;${polish.jarPath};;-C;;${polish.packageDir};;."
+		/>
+	</build>
+	<emulator />
+</j2mepolish>

@@ -1,0 +1,12 @@
+// you can define variables in the localization files (messages.txt, messages_fr.txt etc) as well:
+
+# The base URL of the application:
+var:config.BaseUrl = http://www.server.com
+# The message that is displayed on the splash screen:
+var:config.WelcomeMessage = Willkommen!
+# Some places:
+var:config.Places = "Home", "Work", "School"
+
+
+In your code, you can then include the values with the #= directive:
+//#= String[] placesOfInterest = new String[]{ ${config.Places} };

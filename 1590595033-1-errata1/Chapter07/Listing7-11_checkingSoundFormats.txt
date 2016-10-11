@@ -1,0 +1,11 @@
+// use this snippet for detecting the supported sound formats
+// of your target device within your source code:
+
+//#if polish.api.mmapi || polish.midp2
+	// okay, the MMAPI can be used for audio playback.
+	//#if polish.audio.midi
+		// play back the MIDI file...
+	//#elif polish.audio.wav
+		// play back the WAV file...
+	//#endif
+//#endif

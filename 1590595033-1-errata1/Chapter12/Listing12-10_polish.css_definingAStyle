@@ -1,0 +1,6 @@
+/* you can define your own styles by starting their name with a dot: */
+
+.mainMenu {
+	background-image: url( bg.png );
+	columns: 2;
+}

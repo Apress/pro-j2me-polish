@@ -1,0 +1,20 @@
+<!-- Listing A-7. Enabling the Localization and Including Specific Resources -->
+
+
+<resources
+	dir="resources"
+	excludes="*.txt"
+>
+	<fileset
+		dir="resources/multimedia"
+		includes="*.mp3"
+		if="polish.audio.mp3"
+	/>
+	<fileset
+		dir="resources/multimedia"
+		includes="*.mid"
+		if="polish.audio.midi and not polish.audio.mp3"
+	/>
+	<localization locales="de, en" unless="test" />
+	<localization locales="en" if="test" />
+</resources>

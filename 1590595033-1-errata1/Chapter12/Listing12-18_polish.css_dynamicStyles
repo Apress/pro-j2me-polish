@@ -1,0 +1,18 @@
+/* dynamic styles cost additional resources, so stick to static and predefined ones
+   if posssible.
+*/
+
+
+p {
+	font-color: black;
+	font-size: medium;
+	background: none;
+}
+
+form {
+	margin: 5;
+	background-color: gray;
+	border: none;
+	font-size: medium;
+}
+

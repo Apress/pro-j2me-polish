@@ -1,0 +1,15 @@
+<!-- Listing A-9. Sorting JAD Attributes with <jadFilter> -->
+
+<jad>
+	<attribute
+		name="Nokia-MIDlet-Category"
+		value="Game"
+		if="polish.group.Series40"
+	/>
+	<jadFilter if="polish.Vendor == Samsung" >
+		MIDlet-Name, MIDlet-Version,
+		MIDlet-Vendor, MIDlet-Jar-URL, MIDlet-Jar-Size,
+		MIDlet-Description?, MIDlet-Icon?, MIDlet-Info-URL?,
+		MIDlet-Data-Size?, MIDlet-*, *
+	</jadFilter>
+</jad>

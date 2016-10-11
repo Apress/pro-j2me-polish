@@ -1,0 +1,30 @@
+// Listing 16-2.Measuring the Performance of a Typical Game Loop
+
+public void run() {
+	while ( this.gameIsRunning ) {
+		evaluateUserInput();
+
+		//#if polish.debug.benchmark
+			long startTime = System.currentTimeMillis();
+			for ( int i = 0; i < 100; i++ ) {
+		//#endif
+		animateWorld();
+		//#if polish.debug.benchmark
+			}
+			long timeAnimate = System.currentTimeMillis() - startTime;
+		//#endif
+		//#if polish.debug.benchmark
+			startTime = System.currentTimeMillis();
+			for ( int i = 0; i < 100; i++ ) {
+		//#endif
+
+		renderWorld();
+
+		//#if polish.debug.benchmark
+			}
+			long timeRender = System.currentTimeMillis() - startTime;
+			//#debug benchmark
+			System.out.println( "animateWorld: " + timeAnimate + "renderWorld: " + timeRender );
+		//#endif
+	}
+}

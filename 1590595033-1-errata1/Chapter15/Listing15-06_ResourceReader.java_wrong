@@ -1,0 +1,22 @@
+Listing 15-6. Reading a Resource Incorrectly
+
+public class ResourceReader {
+
+	public byte[] readResource( String url )
+	throws IOException
+	{
+		InputStream in = getClass().getResourceAsStream( url );
+
+		// the following always returns 0 on Symbian and Motorola:
+		int available = in.available();
+		byte[] buffer = new byte[ available ];
+
+		// this is not guaranteed to work either:
+		in.read( buffer );
+
+		// the input stream is not guaranteed to be closed,
+		// since in.read() may throw an exception.
+		in.close();
+		return buffer;
+	}
+}

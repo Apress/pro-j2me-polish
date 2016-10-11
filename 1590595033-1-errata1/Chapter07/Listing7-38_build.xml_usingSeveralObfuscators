@@ -1,0 +1,20 @@
+<!-- Use several obfuscator at once just by specifying several <obfuscator> elements -->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Nokia/Series60" />
+	</deviceRequirements>
+	<build>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+		<obfuscator name="ProGuard" />
+		<obfuscator name="Dasho" />
+	</build>
+	<emulator />
+</j2mepolish>

@@ -1,0 +1,11 @@
+# you should see the following output
+# when you execute Ant with the build.xml file
+# of Listing 7-1:
+
+> ant
+Buildfile: build.xml
+hello:
+[echo] hello world!
+BUILD SUCCESSFUL
+Total time: 3 seconds
+

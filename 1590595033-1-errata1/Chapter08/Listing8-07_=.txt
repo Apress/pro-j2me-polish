@@ -1,0 +1,10 @@
+// use the //#= directive for integrating values from the device database.
+// Test whether a value is defined by checking the "[variable-name]:defined" preprocessing symbol:
+
+//#ifdef polish.FullCanvasSize:defined
+	//#= final int width = ${polish.FullCanvasWidth};
+	//#= final int height = ${polish.FullCanvasHeight};
+//#else
+	final int width = myCanvas.getWidth();
+	final int height = myCanvas.getHeight();
+//#endif

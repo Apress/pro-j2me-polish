@@ -1,0 +1,7 @@
+# you can localize standard GUI elements like the "Cancel" menu and so on
+# by defining the appropriate variables in the corresponding messages.txt file/
+# In this example we define German translations in messages_de.txt:
+
+var:polish.command.cancel=Abbruch
+var:polish.command.delete=L\u00f6schen
+var:polish.title.input=Eingabe

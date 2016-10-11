@@ -1,0 +1,39 @@
+// use the TextUtil for splitting text:
+
+import de.enough.polish.util.TextUtil;
+import javax.microedition.lcdui.Graphics;
+import javax.microedition.lcdui.Font;
+
+public final class TextViewer {
+	private final String[] lines;
+	private final Font font;
+	private final int color;
+
+	public TextViewer( String text ) {
+		// splitting the text only at line breaks:
+		this.lines = TextUtil.split( text, '\n' );
+		this.font = Font.getDefaultFont();
+		this.color = 0;
+	}
+
+	public TextViewer( String text, Font font, int color,
+		int firstLineWidth, int lineWidth )
+	{
+		// wrapping the text for the specified font, so that
+		// it fits on the screen:
+		this.lines = TextUtil.split( text, font, firstLineWidth, lineWidth );
+		this.font = font;
+		this.color = color;
+	}
+
+	public void paint( int x, int y, Graphics g ) {
+		g.setColor( this.color );
+		g.setFont( this.font );
+		int lineHeight = this.font.getHeight() + 2;
+		for (int i = 0; i < this.lines.length; i++ ) {
+			String line = this.lines[i];
+			g.drawString( line, x, y, Graphics.TOP | Graphics.LEFT );
+			y += lineHeight;
+		}
+	}
+}

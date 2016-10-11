@@ -1,0 +1,8 @@
+// The logging framework allows you to control the inclusion of log messages quite easily:
+
+try {
+	this.optionalImage = Image.createImage( "/optional.png" );
+} catch (IOException e) {
+	//#debug
+	System.out.println("Unable to load optional.png" + e );
+}

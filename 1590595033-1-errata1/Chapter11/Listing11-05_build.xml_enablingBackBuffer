@@ -1,0 +1,12 @@
+<!-- Activating the backbuffer optimization brings speed but needs more  memory -->
+
+<variables>
+	<variable
+		name="polish.TiledLayer.useBackBuffer"
+		value="true"
+	/>
+	<variable
+		name="polish.TiledLayer.TransparentTileColor"
+		value="0xCFCFCF"
+	/>
+</variables>

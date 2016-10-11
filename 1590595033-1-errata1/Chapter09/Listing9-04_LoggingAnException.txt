@@ -1,0 +1,8 @@
+// you can log an exception by adding the exception with a + as the last parameter:
+
+try {
+	image = Image.createImage( url );
+} catch (IOException e) {
+	//#debug error
+	System.out.println("Unable to load image [" + url + "]" + e );
+}

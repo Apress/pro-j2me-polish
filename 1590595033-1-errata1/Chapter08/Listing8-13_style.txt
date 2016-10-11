@@ -1,0 +1,4 @@
+// use the //#style directive for applying a J2ME Polish CSS style to the following item:
+
+//#style text
+StringItem item = new StringItem( null, "Hello World!" );

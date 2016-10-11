@@ -1,0 +1,6 @@
+<debug level="error" showLogOnError="true" verbose="false" >
+	<handler name="rms">
+		<parameter name="useBackgroundThread" value="false" />
+	</handler>
+	<handler name="http" />
+</debug>

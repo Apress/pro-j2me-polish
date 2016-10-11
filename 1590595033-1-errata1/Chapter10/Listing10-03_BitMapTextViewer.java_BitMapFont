@@ -1,0 +1,35 @@
+// Use the de.enough.polish.util.BitMapFont and BitMapFontViewer for displaying any font.
+
+import de.enough.polish.util.BitMapFont;
+import de.enough.polish.util.BitMapFontViewer;
+import javax.microedition.lcdui.CustomItem;
+import javax.microedition.lcdui.Graphics;
+import javax.microedition.lcdui.Font;
+
+public final class BitMapTextViewer {
+	private final BitMapFont bitMapFont;
+	private BitMapFontViewer bitMapFontViewer;
+	private final int verticalPadding;
+	private final int firstLineWidth;
+	private final int lineWidth;
+
+	public BitMapTextViewer( String text, int verticalPadding,
+		int firstLineWidth, int lineWidth )
+	{
+		this.bitMapFont = BitMapFont.getInstance("/china.bmf");
+		this.verticalPadding = verticalPadding;
+		this.firstLineWidth = firstLineWidth;
+		this.lineWidth = lineWidth;
+		setText( text );
+	}
+
+	public void setText( String text ) {
+		this.bitMapFontViewer = this.bitMapFont.getViewer( text );
+		this.bitMapFontViewer.layout( this.firstLineWidth, this.lineWidth,
+		this.verticalPadding, Graphics.LEFT );
+	}
+
+	public void paint( int x, int y, Graphics g ) {
+		this.bitMapFontViewer.paint( x, y, g );
+	}
+}

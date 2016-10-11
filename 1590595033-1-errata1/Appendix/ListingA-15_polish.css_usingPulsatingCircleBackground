@@ -1,0 +1,14 @@
+/* Listing A-15. Using the pulsating circle Background for the Currently Focused Item */
+
+
+focused {
+	padding: 9;
+	font-color: highlightedFontColor;
+	background {
+		type: pulsating-circle;
+		color: white;
+		min-diameter: 20;
+		max-diameter: 75;
+	}
+	layout: expand | center;
+}

@@ -1,0 +1,37 @@
+package com.apress.preprocess;
+
+import org.apache.tools.ant.BuildException;
+import de.enough.polish.preprocess.CustomPreprocessor;
+import de.enough.polish.util.StringList;
+
+public class UserAgentPreprocessor extends CustomPreprocessor {
+
+	public UserAgentPreprocessor() {
+		super();
+		registerDirective( "//#useragent" );
+	}
+
+	public void processUseragent( String line, StringList lines, String className ) {
+		int directiveStart = line.indexOf( "//#useragent" );
+		String argument = line.substring( directiveStart
+			+ "//#useragent".length() ).trim();
+		int replacePos = argument.indexOf( "${useragent}" );
+		if ( replacePos == -1 ) {
+			throw new BuildException( getErrorStart( className, lines )
+				+ "Unable to process #useragent-directive: "
+				+ "found no ${useragent} sequence in line ["
+				+ line + "]." );
+		}
+		String userAgent = this.currentDevice.getCapability( "polish.UserAgent" );
+		if ( userAgent == null ) {
+			userAgent = this.currentDevice.getIdentifier();
+		}
+		if ( this.currentLocale != null ) {
+			userAgent += "<" + this.currentLocale.toString() + ">";
+		}
+		String result = argument.substring( 0, replacePos )
+			+ userAgent
+			+ argument.substring( replacePos + "${useragent}".length() );
+		lines.setCurrent( result );
+	}
+}

@@ -1,0 +1,37 @@
+<apis>
+	<api>
+		<name>Mobile Media API</name>
+		<description>
+			The Mobile Media API provides
+			functionalities for playing and capturing sounds and videos.
+		</description>
+		<names>mmapi,mm-api, JSR-135, JSR135</names>
+		<symbol>mmapi</symbol>
+		<files>j2me-mmapi.jar, mma.zip</files>
+		<path>import/j2me-mmapi.jar</path>
+	</api>
+	<api>
+		<name>Wireless Messaging API</name>
+		<description>
+			The Wireless Messaging API provides
+			functionalities for sending and receiving messages (SMS).
+		</description>
+		<names>wmapi, wm-api, JSR-120, JSR120, wma</names>
+		<symbol>wmapi</symbol>
+		<files>j2me-wmapi.jar, wma.zip</files>
+		<path>import/j2me-wmapi.jar</path>
+	</api>
+	<api>
+		<name>Wireless Messaging API 2.0</name>
+		<description>
+			The Wireless Messaging API 2.0 provides
+			functionalities for sending and receiving text and
+			multimedia messages (SMS and MMS).
+		</description>
+		<names>wmapi2.0, wmapi2, JSR-205, JSR205</names>
+		<symbol>wmapi2.0</symbol>
+		<parent>wmapi</parent>
+		<files>j2me-wmapi-2.0.jar, wma_2_0.zip</files>
+		<path>import/j2me-wmapi-2.0.jar</path>
+	</api>
+</apis>

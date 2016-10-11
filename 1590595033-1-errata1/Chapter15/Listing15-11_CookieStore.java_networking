@@ -1,0 +1,22 @@
+// Listing 15-11. Receiving and Setting Cookies
+
+import javax.microedition.io.HttpConnection;
+import java.io.IOException;
+
+public class CookieStore {
+	private String cookie;
+
+	public void readCookie( HttpConnection con ) throws IOException {
+		this.cookie = con.getHeaderField( "Set-Cookie" );
+		if ( this.cookie == null ) {
+			this.cookie = con.getHeaderField( "Set-Cookie2" );
+		}
+	}
+
+	public void setCookie( HttpConnection con )
+	throws IOException {
+		if ( this.cookie != null ) {
+			con.setRequestProperty( "Cookie", this.cookie );
+		}
+	}
+}

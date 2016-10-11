@@ -1,0 +1,31 @@
+<!-- you can define preprocessing variables and symbols in the <j2mepolish> task -->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Generic/midp1" />
+	</deviceRequirements>
+	<build
+		usePolishGui="true"
+		symbols="mySymbol1, mySymbol2"
+	>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+		<variables includeAntProperties="true">
+			<variable
+				name="config.BaseUrl"
+				value="http://www.server.com"
+			/>
+			<variable
+				name="config.WelcomeMessage"
+				value="Welcome!"
+			/>
+		</variables>
+	</build>
+	<emulator />
+</j2mepolish>

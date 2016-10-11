@@ -1,0 +1,6 @@
+<!-- Listing A-4. Activating Bytecode Optimizations in ProGuard -->
+
+
+<obfuscator name="ProGuard" unless="test" >
+	<parameter name="optimize" value="true" />
+</obfuscator>

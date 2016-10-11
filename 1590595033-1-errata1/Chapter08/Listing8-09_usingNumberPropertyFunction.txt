@@ -1,0 +1,14 @@
+// The number() property function is quite useful in combination with //#foreach directives,
+// since it determines the number of subvalues of a preprocessing variable:
+
+//#if polish.log.handlers:defined
+	private static LogHandler[] handlers;
+	static {
+		//#= handlers = new LogHandler[ ${ number( polish.log.handlers )} ];
+		int i = 0;
+		//#foreach handler in polish.log.handlers
+			//#= handlers[i] = new ${ classname( handler )}();
+			i++;
+		//#next handler
+	}
+//#endif

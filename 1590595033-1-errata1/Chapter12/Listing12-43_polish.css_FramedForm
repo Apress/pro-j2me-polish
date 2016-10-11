@@ -1,0 +1,10 @@
+/* design a FramedForm with the predefined styles
+   frame or topframe, bottomframe, leftframe and rightframe.
+*/
+
+bottomframe {
+	padding: 3;
+	background-color: silver;
+	layout: expand;
+	padding-bottom: 0;
+}

@@ -1,0 +1,6 @@
+<!-- Listing A-3. Configuring Your Obfuscator -->
+
+
+<obfuscator unless="test" enable="true" name="ProGuard" >
+	<parameter name="scriptFile" value="../scripts/obfuscate.script" />
+</obfuscator>

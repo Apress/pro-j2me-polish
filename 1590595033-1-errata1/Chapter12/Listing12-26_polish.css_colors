@@ -1,0 +1,25 @@
+/* you can define colors in different ways */
+
+.myStyle {
+
+	/* the name of the color */
+	font-color: white;
+
+	/* an rgb hex value */
+	border-color: #80FF80;
+
+	/* a short rgb-hex-value - this is red */
+	start-color: #F00;
+
+	/* an alpha-rgb hex value */
+	menu-color: #7F80FF80;
+
+	/* a rrr,ggg,bbb value */
+	background-color: rgb( 255, 50, 128 );
+
+	/* an rgb-value with percentage */
+	fill-color: rgb( 100%, 30%, 50% );
+
+	/* a translucent aaa,  rrr, ggg, bbb value */
+	label-color: argb( 128, 255, 50, 128 );
+}

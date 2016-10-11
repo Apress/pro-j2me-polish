@@ -1,0 +1,7 @@
+// Use values from the device database directly:
+
+//#ifdef polish.ScreenWidth:defined
+	//#= final int myMessageWidth = ${polish.ScreenWidth} * 2 / 3;
+//#else
+	final int myMessageWidth = getWidth() * 2 / 3;
+//#endif

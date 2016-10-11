@@ -1,0 +1,18 @@
+/* Listing A-18. Using the opening-round-rect Background for the Currently Focused Item */
+
+
+
+focused {
+	padding: 9;
+	font-color: highlightedFontColor;
+	background {
+		type: opening-round-rect;
+		color: white;
+		start-height: 0;
+		steps: 2;
+		border-width: 2;
+		border-color: fontColor;
+		arc: 18;
+	}
+	layout: expand | center;
+}

@@ -1,0 +1,6 @@
+/* activate a table view by specifying the "columns" attribute */
+
+.inputScreen {
+	columns: 2;
+	columns-width: 52,110;
+}

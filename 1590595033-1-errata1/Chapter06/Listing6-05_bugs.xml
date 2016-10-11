@@ -1,0 +1,31 @@
+<bugs>
+	<bug>
+		<name>drawRgbOrigin</name>
+		<description>
+			The Graphics.drawRGB(..) method does not use a
+			translated origin, but starts always at the top-left 0,0 origin.
+		</description>
+		<area>ui</area>
+		<solution>
+			Use the top-left 0,0 origin for devices with this bug:
+			//#ifdef polish.Bugs.drawRgbOrigin
+				x += g.getTranslateX();
+				y += g.getTranslateY();
+			//#endif
+			g.drawRGB( rgbData, offset, scanlength, x, y, width, height, processAlpha);
+		</solution>
+	</bug>
+	<bug>
+		<name>ImageIOStreamAutoClose</name>
+		<description>
+			The Image.createImage( InputStream in ) should not close
+			the given input stream according to the specification. Devices with this
+			bug close the input stream.
+		</description>
+		<area>io</area>
+		<solution>
+			Move any image which should be loaded from an input stream to
+			the last position in the corresponding stream.
+		</solution>
+	<bug>
+</bugs>

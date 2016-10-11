@@ -1,0 +1,5 @@
+<taskdef
+	name="j2mepolish"
+	classname="de.enough.polish.ant.PolishTask"
+	classpath="${polish.home}/bin/classes:${polish.home}/import/jdom.jar:../apress-j2mepolish/bin/classes"
+/>

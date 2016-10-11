@@ -1,0 +1,49 @@
+// Listing 16-5. Creating Many Temporary Objects by Filtering and Sorting a Record Store
+
+
+
+import javax.microedition.rms.*;
+
+import de.enough.polish.util.ArrayList;
+
+
+public class RecordStoreReader
+implements RecordFilter, RecordComparator
+{
+
+	private final ArrayList list;
+	private final Object condition;
+
+	public RecordStoreReader( Object condition )
+	throws RecordStoreException
+	{
+		this.condition = condition;
+		this.list = new ArrayList();
+		// open record store:
+		RecordStore store = RecordStore.openRecordStore( "store", false );
+		// enumerate the record sets:
+		RecordEnumeration enumeration =
+			store.enumerateRecords( this, this, false );
+
+		while ( enumeration.hasNextElement() ) {
+			MyRecordData data = new MyRecordData( ennumeration.nextRecord() );
+			this.list.add( data );
+		}
+		store.closeRecordStore();
+	}
+
+	public ArrayList getRecords() {
+		return this.list;
+	}
+
+	public int compare( byte[] rec1, byte[] rec2 ) {
+		MyRecordData data1 = new MyRecordData( rec1 );
+		MyRecordData data2 = new MyRecordData( rec2 );
+		return data1.compare( data2 );
+	}
+
+	public boolean matches( byte[] candidate ) {
+		MyRecordData data = new MyRecordData( candidate );
+		return data.conditionFulfilled( this.condition );
+	}
+}

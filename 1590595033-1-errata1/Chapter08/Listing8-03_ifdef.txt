@@ -1,0 +1,10 @@
+// use this snippet as an example how to use the //#ifdef directive.
+// In this example we add an extra menu element when the target device
+// has a camera:
+
+this.menuScreen = new List( "Menu", List.IMPLICIT );
+this.menuScreen.append("Load Photos", null );
+this.menuScreen.append("View Photos", null );
+//#ifdef polish.hasCamera
+	this.menuScreen.append("Create Photo", null );
+//#endif

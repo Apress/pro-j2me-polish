@@ -1,0 +1,14 @@
+/* use "before" or "after"
+   for placing images before or after any items
+   with the given style.
+*/
+
+
+focused {
+	font-color: highlightedFontColor;
+	background: none;
+	border-type: round-rect;
+	border-width: 2;
+	border-color: highlightedBorderColor;
+	after: url( heart.png );
+}

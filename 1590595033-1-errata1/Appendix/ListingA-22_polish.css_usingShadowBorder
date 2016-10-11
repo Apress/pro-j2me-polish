@@ -1,0 +1,14 @@
+/* Listing A-22. Using a shadow Border for the Currently Focused Item */
+
+
+focused {
+	font-color: highlightedFontColor;
+	background-color: highlightedBackgroundColor;
+	border {
+		type: shadow;
+		width: 2;
+		color: black;
+		offset: 5;
+	}
+	layout: expand | center;
+}

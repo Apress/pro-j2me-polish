@@ -1,0 +1,30 @@
+<attributes>
+
+	<attribute
+		name="stringlistitem-highlighted-foreground-color"
+		type="color"
+		appliesTo="StringListItem"
+		description="The text color of the currently focused entry."
+	/>
+
+	<attribute
+		name="stringlistitem-foreground-color"
+		type="color"
+		appliesTo="StringListItem"
+		description="The text color of a normal non-focused entry."
+	/>
+
+	<attribute
+		name="stringlistitem-highlighted-background-color"
+		type="color"
+		appliesTo="StringListItem"
+		description="The background color of the currently focused entry."
+	/>
+
+	<attribute
+		name="stringlistitem-background-color"
+		type="color"
+		appliesTo="StringListItem"
+		description="The background color of a normal non-focused entry."
+	/>
+</attributes>

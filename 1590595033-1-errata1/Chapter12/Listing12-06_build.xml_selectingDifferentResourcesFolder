@@ -1,0 +1,26 @@
+<!-- You can select a different resources folder by setting the "dir" attribute
+     of the <resources> element.
+-->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Generic/midp1" />
+	</deviceRequirements>
+	<build
+		usePolishGui="true"
+		fullscreen="menu"
+	>
+	<midlet class="com.apress.roadrunner.Roadrunner" />
+	<resources
+			dir="resources2"
+		/>
+	</build>
+	<emulator />
+</j2mepolish>

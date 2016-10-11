@@ -1,0 +1,32 @@
+<!-- Integrate binary third party APIs with the <libraries> element -->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Nokia/Series60" />
+	</deviceRequirements>
+	<build>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+		<libraries>
+			<library 
+				file="thirdparty/tinylines60.zip"
+				if="polish.group.Series60 and not polish.midp2" 
+			/>
+			<library 
+				file="thirdparty/tinylinemidp2.zip"
+				if="polish.midp2" 
+			/>
+			<library 
+				file="thirdparty/tinyline.zip"
+				if="polish.midp1 and not polish.group.Series60" 
+			/>
+		</libraries>
+	</build>
+	<emulator />
+</j2mepolish>

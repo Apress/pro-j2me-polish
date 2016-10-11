@@ -1,0 +1,20 @@
+<!-- Listing 14-1. Selecting All Devices That Include a Camera and Support Image Capturing -->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Term" value="polish.hasCamera and polish.Capture.image" />
+	</deviceRequirements>
+	<build
+		usePolishGui="true"
+	>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+	</build>
+	<emulator />
+</j2mepolish>

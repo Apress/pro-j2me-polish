@@ -1,0 +1,21 @@
+<!-- You can target several devices at once by using the <deviceRequirement> section -->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<or>
+			<requirement name="JavaPlatform" value="MIDP/2.0+" />
+			<requirement name="JavaPackage" value="nokia-ui" />
+		</or>
+	</deviceRequirements>
+	<build>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+	</build>
+	<emulator />
+</j2mepolish>

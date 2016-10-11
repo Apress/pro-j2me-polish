@@ -1,0 +1,31 @@
+<!-- Listing 15-1. Filtering JAD Attributes on Samsung Devices -->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="A reader."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="JavaPlatform" value="MIDP/2.0" />
+	</deviceRequirements>
+	<build>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+		<jad>
+			<jadFilter if="polish.Vendor == Samsung">
+				MIDlet-1, MIDlet-2?, MIDlet-3?, MIDlet-4?, MIDlet-5?,
+				MIDlet-JarSize, MIDlet-Jar-URL,
+				MIDlet-Name, MIDlet-Vendor, MIDlet-Version
+			</jadFilter>
+		</jad>
+		<manifestFilter>
+			Manifest-Version, MIDlet-Name,
+			MIDlet-1, MIDlet-2?, MIDlet-3?, MIDlet-4?, MIDlet-5?,
+			MIDlet-Version, MIDlet-Vendor,
+			MicroEdition-Configuration, MicroEdition-Profile
+		</manifestFilter>
+	</build>
+	<emulator />
+</j2mepolish>

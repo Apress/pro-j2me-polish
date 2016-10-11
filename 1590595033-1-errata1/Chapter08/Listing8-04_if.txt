@@ -1,0 +1,9 @@
+// use this snippet as an example for the //#if directive:
+
+public void startApp() {
+	//#if polish.api.mmapi && (polish.BitsPerColor >= 16)
+		showSplashVideo();
+	//#else
+		showSplashImage();
+	//#endif
+}

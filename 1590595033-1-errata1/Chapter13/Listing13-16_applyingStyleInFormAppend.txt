@@ -1,0 +1,5 @@
+String[] entries = new String[] { " first ", " second ", " third ", " fourth ", " fifth ", " sixth ", " seventh " };
+StringListItem customListItem = new StringListItem( "Place:", entries, 4, this.display );
+
+//#style winnerStringListStyle
+this.inputForm.append( customListItem );

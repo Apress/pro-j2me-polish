@@ -1,0 +1,7 @@
+// create a new polish.css at resources/Nokia/polish.css for creating a Nokia specific design.
+
+
+.myStyle {
+	font-color: gray;
+	background: none;
+}

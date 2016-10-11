@@ -1,0 +1,7 @@
+<!-- Listing A-6. Using the DashO Obfuscator -->
+
+
+<obfuscator unless="test" enable="true" name="Dasho" >
+	<parameter name="DashoHome" value="/home/user/DashOPro_3.1" />
+	<parameter name="Version" value="3.1" />
+</obfuscator>

@@ -1,0 +1,14 @@
+<!-- Use dependencies for splitting up
+     several tasks/targets into logical steps.
+     Dependencies are made with the "depends" attribute
+    of the <target> element.
+-->
+
+<project name="example" default="build">
+	<target name="build">
+		<echo message="building application..." />
+	</target>
+	<target name="deploy" depends="build">
+		<echo message="deploying application..." />
+	</target>
+</project>

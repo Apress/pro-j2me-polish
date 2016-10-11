@@ -1,0 +1,28 @@
+<!-- Insert JAD and Manifest attributes with the <jad> element -->
+
+<j2mepolish>
+	<info
+		license="GPL"
+		name="Roadrunner"
+		vendorName="HighTech Ltd."
+		version="0.0.1"
+		jarName="${polish.vendor}-${polish.name}-roadrunner.jar"
+	/>
+	<deviceRequirements>
+		<requirement name="Identifier" value="Generic/midp1" />
+	</deviceRequirements>
+	<build>
+		<midlet class="com.apress.roadrunner.Roadrunner" />
+		<jad>
+			<attribute
+				name="Nokia-MIDlet-Category"
+				value="Game"
+				if="polish.group.Series40"
+			/>
+			<attribute
+				file="config/${polish.name}.attributes"
+			/> 
+		</jad>
+	</build>
+	<emulator />
+</j2mepolish>

@@ -1,0 +1,8 @@
+/* setting a simple background for the title */
+
+title {
+	font-color: highlightedFontColor;
+	background-color: red;
+	border-color: black;
+	border-width: 2;
+}
